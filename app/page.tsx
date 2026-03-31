@@ -11,34 +11,6 @@ import { Check, Users, Award, Shield, ChevronDown } from 'lucide-react'
 export default function Home() {
   const { t } = useI18n()
 
-  const services = [
-    {
-      title: t('services.festivals'),
-      description: t('services.festivalsDesc'),
-      image: '/images/polo-match.jpg',
-    },
-    {
-      title: t('services.celebrity'),
-      description: t('services.celebrityDesc'),
-      image: '/images/formal-gala.jpg',
-    },
-    {
-      title: t('services.corporate'),
-      description: t('services.corporateDesc'),
-      image: '/images/gala-dinner.jpg',
-    },
-    {
-      title: t('services.brand'),
-      description: t('services.brandDesc'),
-      image: '/images/santa-maria-polo.jpg',
-    },
-    {
-      title: t('services.security'),
-      description: t('services.securityDesc'),
-      image: '/images/award-ceremony.jpg',
-    },
-  ]
-
   const features = [
     { icon: Check, text: t('hero.satisfaction') },
     { icon: Users, text: t('hero.commitment') },
@@ -50,85 +22,12 @@ export default function Home() {
     <main className="bg-[#0d0d0d] min-h-screen">
       <Navigation />
 
-      {/* Global Gift Gala 2025 Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/gala-dinner.jpg"
-            alt="Global Gift Gala 2025"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-[#0d0d0d]" />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-          <FadeIn delay={100}>
-            <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-6">
-              Luxury Experience 2025
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-8 text-balance">
-              Global Gift Gala 2025
-            </h1>
-          </FadeIn>
-
-          <FadeIn delay={300}>
-            <div className="flex flex-col gap-4 items-center justify-center mb-12">
-              <p className="text-lg sm:text-xl text-[#c9a55a] font-semibold">
-                Exclusive International Charity Galas
-              </p>
-              <p className="text-lg sm:text-xl text-[#c9a55a] font-semibold">
-                Premium Event Management Services
-              </p>
-              <p className="text-lg sm:text-xl text-[#c9a55a] font-semibold">
-                Supporting Children & Youth Worldwide
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={400}>
-            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Join us for an evening of elegance, philanthropy, and unforgettable moments. Our Global Gift Gala brings together influential leaders and visionaries to make a meaningful impact on children and youth worldwide.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={500}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/events"
-                className="inline-block px-10 py-4 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
-              >
-                Explore Events
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-block px-10 py-4 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-              >
-                Reserve Your Seat
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown size={32} className="text-[#c9a55a]" />
-        </div>
-      </section>
-
-      {/* Main Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/polo-match.jpg"
-            alt="Luxury Event"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[#0d0d0d]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-[#0d0d0d]" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#c9a55a]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#c9a55a]/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
@@ -178,7 +77,7 @@ export default function Home() {
           </FadeIn>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
           <ChevronDown size={32} className="text-[#c9a55a]" />
         </div>
       </section>
@@ -198,26 +97,21 @@ export default function Home() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => (
+            {[
+              { title: t('services.festivals'), desc: t('services.festivalsDesc') },
+              { title: t('services.celebrity'), desc: t('services.celebrityDesc') },
+              { title: t('services.corporate'), desc: t('services.corporateDesc') },
+              { title: t('services.brand'), desc: t('services.brandDesc') },
+              { title: t('services.security'), desc: t('services.securityDesc') },
+            ].map((service, i) => (
               <FadeIn key={i} delay={i * 100} direction="up">
-                <div className="group relative overflow-hidden rounded bg-[#1a1a1a] border border-white/10 hover:border-[#c9a55a]/50 transition-all duration-500">
-                  <div className="aspect-[16/10] relative overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
+                <div className="p-8 bg-[#1a1a1a] border border-white/10 rounded hover:border-[#c9a55a]/50 transition-all duration-500 group">
+                  <h3 className="text-xl font-serif font-bold text-white mb-4 group-hover:text-[#c9a55a] transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    {service.desc}
+                  </p>
                 </div>
               </FadeIn>
             ))}
@@ -263,13 +157,6 @@ export default function Home() {
 
           <FadeIn delay={200}>
             <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 sm:p-12 lg:p-16 text-center">
-              <Image
-                src="/logo.png"
-                alt="DM Promotions"
-                width={160}
-                height={53}
-                className="h-14 w-auto object-contain mx-auto mb-8 opacity-70"
-              />
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-6">
                 {t('events.cta')}
               </h3>
@@ -303,12 +190,12 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="left">
-              <div className="relative aspect-[4/3] rounded overflow-hidden">
+              <div className="relative aspect-[4/3] rounded overflow-hidden bg-[#1a1a1a] border border-white/10">
                 <Image
                   src="/images/duncan-ceo.png"
                   alt="Duncan McHugh CEO"
                   fill
-                  className="object-contain bg-[#1a1a1a]"
+                  className="object-contain"
                 />
               </div>
             </FadeIn>
@@ -354,15 +241,7 @@ export default function Home() {
             <FadeIn delay={100} direction="up">
               <Link href="/blog/ski-review" className="group block">
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
-                  <div className="aspect-video relative overflow-hidden">
-                    <Image
-                      src="/images/sierra-woman-mountain.jpg"
-                      alt="Ski Review"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
+                  <div className="p-8">
                     <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
                       {t('blog.skiTitle')}
                     </h3>
@@ -377,15 +256,7 @@ export default function Home() {
             <FadeIn delay={200} direction="up">
               <Link href="/blog/ceo-review" className="group block">
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
-                  <div className="aspect-video relative overflow-hidden">
-                    <Image
-                      src="/images/duncan-ceo.png"
-                      alt="CEO Review"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
+                  <div className="p-8">
                     <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
                       {t('blog.ceoTitle')}
                     </h3>
@@ -400,38 +271,19 @@ export default function Home() {
 
           {/* Sponsorship CTA */}
           <FadeIn delay={300}>
-            <div className="relative rounded overflow-hidden">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/sierra-luxury-chalet.jpg"
-                  alt="Sierra Nevada"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/60" />
-              </div>
-              <div className="relative z-10 p-8 sm:p-12 lg:p-16 text-center">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
-                  {t('blog.sponsorship')}
-                </h3>
-                <p className="text-[#c9a55a] text-lg mb-8 font-medium">
-                  {t('blog.vip')}
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="px-8 py-3 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
-                  >
-                    {t('nav.contact')}
-                  </Link>
-                  <Link
-                    href="/blog"
-                    className="px-8 py-3 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-                  >
-                    {t('showcase.learnMore')}
-                  </Link>
-                </div>
-              </div>
+            <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 sm:p-12 lg:p-16 text-center">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
+                {t('blog.sponsorship')}
+              </h3>
+              <p className="text-[#c9a55a] text-lg mb-8 font-medium">
+                {t('blog.vip')}
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-3 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
+              >
+                {t('nav.contact')}
+              </Link>
             </div>
           </FadeIn>
         </div>
