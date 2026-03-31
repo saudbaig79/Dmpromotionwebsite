@@ -240,10 +240,6 @@ export default function MurderMysteryPage() {
               )
             })}
           </div>
-                </FadeIn>
-              )
-            })}
-          </div>
         </div>
       </section>
 
