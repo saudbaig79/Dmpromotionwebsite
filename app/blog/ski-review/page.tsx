@@ -6,10 +6,10 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
 import { ArrowLeft } from 'lucide-react'
-import { useLanguage } from '@/lib/language-context'
+import { useI18n } from '@/lib/i18n'
 
 export default function SkiReviewPage() {
-  const { t } = useLanguage()
+  const { t } = useI18n()
 
   return (
     <main className="bg-[#0d0d0d] text-white min-h-screen">
@@ -23,8 +23,8 @@ export default function SkiReviewPage() {
               <ArrowLeft size={20} />
               {t('blog.title')}
             </Link>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-              {t('blog.ski.title')}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white">
+              {t('blog.skiTitle')}
             </h1>
           </FadeIn>
         </div>
@@ -34,9 +34,9 @@ export default function SkiReviewPage() {
       <section className="pb-24 bg-[#0d0d0d]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={200}>
-            <div className="relative h-[400px] rounded-sm overflow-hidden mb-12">
+            <div className="relative aspect-video rounded overflow-hidden mb-12">
               <Image
-                src="/images/sierra-nevada.jpg"
+                src="/images/ski.jpg"
                 alt="Sierra Nevada"
                 fill
                 className="object-cover"
@@ -68,9 +68,9 @@ export default function SkiReviewPage() {
             <div className="mt-12 pt-8 border-t border-white/10">
               <Link
                 href="/contact"
-                className="inline-block px-8 py-3 bg-[#c9a55a] text-[#0d0d0d] font-semibold hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
+                className="inline-block px-8 py-3 bg-[#c9a55a] text-black font-semibold hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm rounded"
               >
-                {t('cta.button')}
+                {t('cta.contact')}
               </Link>
             </div>
           </FadeIn>

@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
-import { useLanguage } from '@/lib/language-context'
+import { useI18n } from '@/lib/i18n'
 
 export default function BlogPage() {
-  const { t } = useLanguage()
+  const { t } = useI18n()
 
   return (
     <main className="bg-[#0d0d0d] text-white min-h-screen">
@@ -18,11 +18,11 @@ export default function BlogPage() {
       <section className="pt-32 pb-16 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6">
-              {t('blogPage.title')}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 text-white">
+              {t('blog.title')}
             </h1>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              {t('blogPage.subtitle')}
+              {t('blog.subtitle')}
             </p>
           </FadeIn>
         </div>
@@ -34,10 +34,10 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <FadeIn delay={100}>
               <Link href="/blog/ski-review" className="block group">
-                <div className="bg-[#1a1a1a] border border-white/5 rounded-sm overflow-hidden hover:border-[#c9a55a]/30 transition-all duration-500">
-                  <div className="relative h-64 overflow-hidden">
+                <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
+                  <div className="relative aspect-video overflow-hidden">
                     <Image
-                      src="/images/sierra-nevada.jpg"
+                      src="/images/ski.jpg"
                       alt="Ski Review"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -45,10 +45,10 @@ export default function BlogPage() {
                   </div>
                   <div className="p-8">
                     <h2 className="text-2xl font-serif font-bold mb-4 text-[#c9a55a] group-hover:text-white transition-colors">
-                      {t('blog.ski.title')}
+                      {t('blog.skiTitle')}
                     </h2>
                     <p className="text-white/50 leading-relaxed">
-                      {t('blog.ski.excerpt')}
+                      {t('blog.skiDesc')}
                     </p>
                   </div>
                 </div>
@@ -57,21 +57,21 @@ export default function BlogPage() {
 
             <FadeIn delay={200}>
               <Link href="/blog/ceo-review" className="block group">
-                <div className="bg-[#1a1a1a] border border-white/5 rounded-sm overflow-hidden hover:border-[#c9a55a]/30 transition-all duration-500">
-                  <div className="relative h-64 overflow-hidden">
+                <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
+                  <div className="relative aspect-video overflow-hidden">
                     <Image
-                      src="/images/vip-igloo.jpg"
-                      alt="A CEO's Review"
+                      src="/images/showcase.jpg"
+                      alt="CEO Review"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="p-8">
                     <h2 className="text-2xl font-serif font-bold mb-4 text-[#c9a55a] group-hover:text-white transition-colors">
-                      {t('blog.ceo.title')}
+                      {t('blog.ceoTitle')}
                     </h2>
                     <p className="text-white/50 leading-relaxed">
-                      {t('blog.ceo.excerpt')}
+                      {t('blog.ceoDesc')}
                     </p>
                   </div>
                 </div>

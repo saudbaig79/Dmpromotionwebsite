@@ -5,12 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useLanguage } from '@/lib/language-context'
+import { useI18n } from '@/lib/i18n'
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { language, setLanguage, t } = useLanguage()
+  const { language, setLanguage, t } = useI18n()
 
   const navLinks = [
     { href: '/', label: t('nav.home') },

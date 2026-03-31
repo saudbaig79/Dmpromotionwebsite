@@ -6,10 +6,10 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
 import { Mail, Instagram } from 'lucide-react'
-import { useLanguage } from '@/lib/language-context'
+import { useI18n } from '@/lib/i18n'
 
 export default function ContactPage() {
-  const { t } = useLanguage()
+  const { t } = useI18n()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -25,14 +25,14 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="bg-[#0d0d0d] text-white overflow-x-hidden">
+    <main className="bg-[#0d0d0d] text-white min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 text-center">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-bold mb-6 text-center text-white">
               {t('contact.title')}
             </h1>
             <p className="text-white/60 text-lg text-center max-w-2xl mx-auto">
@@ -44,13 +44,13 @@ export default function ContactPage() {
 
       {/* Contact Form Section */}
       <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Form */}
             <FadeIn direction="left">
-              <div className="bg-[#1a1a1a] border border-white/10 rounded-sm p-8 md:p-12">
+              <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 md:p-12">
                 <h2 className="text-2xl font-serif font-bold mb-8 text-[#c9a55a]">
-                  {t('contact.title')}
+                  {t('contact.sendMessage')}
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -60,7 +60,7 @@ export default function ContactPage() {
                         type="text"
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded-sm text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                       />
                     </div>
                     <div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                         type="text"
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded-sm text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded-sm text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -90,7 +90,7 @@ export default function ContactPage() {
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded-sm text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -100,13 +100,13 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={6}
-                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded-sm text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-[#c9a55a] text-[#0d0d0d] font-semibold hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
+                    className="w-full px-8 py-4 bg-[#c9a55a] text-black font-semibold hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm rounded"
                   >
                     {t('contact.submit')}
                   </button>
@@ -119,7 +119,7 @@ export default function ContactPage() {
               <div className="flex flex-col justify-between h-full">
                 <div>
                   <h2 className="text-2xl font-serif font-bold mb-8 text-[#c9a55a]">
-                    {t('contact.title')}
+                    {t('contact.getInTouch')}
                   </h2>
 
                   <div className="space-y-8 mb-12">
@@ -141,30 +141,30 @@ export default function ContactPage() {
                           rel="noopener noreferrer"
                           className="text-white/60 hover:text-[#c9a55a] transition-colors"
                         >
-                          {t('aboutPage.instagram')}
+                          {t('about.visitInstagram')}
                         </a>
                       </div>
                     </div>
                   </div>
 
-                  <div className="bg-[#1a1a1a] border border-white/10 rounded-sm p-8">
-                    <h3 className="text-xl font-serif font-bold mb-4">{t('aboutPage.story')}</h3>
+                  <div className="bg-[#1a1a1a] border border-white/10 rounded p-8">
+                    <h3 className="text-xl font-serif font-bold mb-4">{t('contact.whyChoose')}</h3>
                     <ul className="space-y-3 text-white/60">
                       <li className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-[#c9a55a] rounded-full" />
-                        <span>{t('feature.satisfaction')}</span>
+                        <span>{t('hero.satisfaction')}</span>
                       </li>
                       <li className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-[#c9a55a] rounded-full" />
-                        <span>{t('feature.commitment')}</span>
+                        <span>{t('hero.commitment')}</span>
                       </li>
                       <li className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-[#c9a55a] rounded-full" />
-                        <span>{t('feature.professional')}</span>
+                        <span>{t('hero.professional')}</span>
                       </li>
                       <li className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-[#c9a55a] rounded-full" />
-                        <span>{t('feature.quality')}</span>
+                        <span>{t('hero.quality')}</span>
                       </li>
                     </ul>
                   </div>

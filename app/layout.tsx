@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { LanguageProvider } from '@/lib/language-context'
+import { I18nProvider } from '@/lib/i18n'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -48,9 +48,9 @@ export default function RootLayout({
       '--font-inter': inter.style.fontFamily,
     } as React.CSSProperties}>
       <body className={`${inter.className} antialiased bg-[#0d0d0d] text-white`}>
-        <LanguageProvider>
+        <I18nProvider>
           {children}
-        </LanguageProvider>
+        </I18nProvider>
         <Analytics />
       </body>
     </html>

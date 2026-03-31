@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram } from 'lucide-react'
-import { useLanguage } from '@/lib/language-context'
+import { useI18n } from '@/lib/i18n'
 
 export function Footer() {
-  const { t } = useLanguage()
+  const { t } = useI18n()
 
   const links = [
     { href: '/', label: t('nav.home') },
@@ -31,7 +31,7 @@ export function Footer() {
               className="h-12 w-auto object-contain mb-6"
             />
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
-              {t('hero.subtitle').substring(0, 120)}...
+              Your partner for exclusive luxury events. 25 years of experience in media and promotion at the highest level.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export function Footer() {
               className="inline-flex items-center gap-2 text-white/50 hover:text-[#c9a55a] transition-colors text-sm"
             >
               <Instagram size={18} />
-              <span>{t('aboutPage.instagram')}</span>
+              <span>{t('about.visitInstagram')}</span>
             </a>
           </div>
         </div>
