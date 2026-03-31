@@ -1,5 +1,6 @@
 'use client'
 
+// Murder Mystery Experience Event Page
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
