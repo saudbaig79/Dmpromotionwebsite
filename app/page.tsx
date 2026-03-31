@@ -15,27 +15,27 @@ export default function Home() {
     {
       title: t('services.festivals'),
       description: t('services.festivalsDesc'),
-      image: '/images/festival.jpg',
+      image: '/images/polo-match.jpg',
     },
     {
       title: t('services.celebrity'),
       description: t('services.celebrityDesc'),
-      image: '/images/celebrity.jpg',
+      image: '/images/formal-gala.jpg',
     },
     {
       title: t('services.corporate'),
       description: t('services.corporateDesc'),
-      image: '/images/corporate.jpg',
+      image: '/images/gala-dinner.jpg',
     },
     {
       title: t('services.brand'),
       description: t('services.brandDesc'),
-      image: '/images/brand-launch.jpg',
+      image: '/images/santa-maria-polo.jpg',
     },
     {
       title: t('services.security'),
       description: t('services.securityDesc'),
-      image: '/images/security.jpg',
+      image: '/images/award-ceremony.jpg',
     },
   ]
 
@@ -50,15 +50,83 @@ export default function Home() {
     <main className="bg-[#0d0d0d] min-h-screen">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Global Gift Gala 2025 Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-bg.jpg"
-            alt="Luxury Event"
+            src="/images/gala-dinner.jpg"
+            alt="Global Gift Gala 2025"
             fill
             className="object-cover"
             priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-[#0d0d0d]" />
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+          <FadeIn delay={100}>
+            <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-6">
+              Luxury Experience 2025
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-8 text-balance">
+              Global Gift Gala 2025
+            </h1>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div className="flex flex-col gap-4 items-center justify-center mb-12">
+              <p className="text-lg sm:text-xl text-[#c9a55a] font-semibold">
+                Exclusive International Charity Galas
+              </p>
+              <p className="text-lg sm:text-xl text-[#c9a55a] font-semibold">
+                Premium Event Management Services
+              </p>
+              <p className="text-lg sm:text-xl text-[#c9a55a] font-semibold">
+                Supporting Children & Youth Worldwide
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={400}>
+            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Join us for an evening of elegance, philanthropy, and unforgettable moments. Our Global Gift Gala brings together influential leaders and visionaries to make a meaningful impact on children and youth worldwide.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={500}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/events"
+                className="inline-block px-10 py-4 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
+              >
+                Explore Events
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block px-10 py-4 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+              >
+                Reserve Your Seat
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown size={32} className="text-[#c9a55a]" />
+        </div>
+      </section>
+
+      {/* Main Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/polo-match.jpg"
+            alt="Luxury Event"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[#0d0d0d]" />
         </div>
@@ -209,10 +277,10 @@ export default function Home() {
                 {t('cta.subtitle')}
               </p>
               <Link
-                href="/contact"
+                href="/events"
                 className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
               >
-                {t('cta.contact')}
+                View All Events
               </Link>
             </div>
           </FadeIn>
@@ -237,12 +305,11 @@ export default function Home() {
             <FadeIn direction="left">
               <div className="relative aspect-[4/3] rounded overflow-hidden">
                 <Image
-                  src="/images/showcase.jpg"
+                  src="/images/duncan-ceo.png"
                   alt="Duncan McHugh CEO"
                   fill
-                  className="object-cover"
+                  className="object-contain bg-[#1a1a1a]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
             </FadeIn>
 
@@ -289,7 +356,7 @@ export default function Home() {
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/images/ski.jpg"
+                      src="/images/sierra-woman-mountain.jpg"
                       alt="Ski Review"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -312,7 +379,7 @@ export default function Home() {
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/images/showcase.jpg"
+                      src="/images/duncan-ceo.png"
                       alt="CEO Review"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -336,7 +403,7 @@ export default function Home() {
             <div className="relative rounded overflow-hidden">
               <div className="absolute inset-0">
                 <Image
-                  src="/images/ski.jpg"
+                  src="/images/sierra-luxury-chalet.jpg"
                   alt="Sierra Nevada"
                   fill
                   className="object-cover"
