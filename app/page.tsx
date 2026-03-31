@@ -1,53 +1,37 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
 import { ChevronDown, CheckCircle, Users, Award, Shield } from 'lucide-react'
-
-const services = [
-  {
-    title: 'Festivals',
-    description: 'A comprehensive solution for a seamless celebration. Our experienced team brings creativity and precision to the table, ensuring your festival is a well-orchestrated spectacle. With a focus on safety, efficiency, and a flair for the extraordinary,',
-    image: '/images/festival.jpg',
-  },
-  {
-    title: 'Celebrity Appearances',
-    description: 'Elevate your event with an appearance from a well known celebrity guest. Our team have connections with numerous celebrities including Bruno Mars, Rhianna, Katy Perry, Mike Tyson to name a few. For a full list of celebrities available enquire today.',
-    image: '/images/celebrity.jpg',
-  },
-  {
-    title: 'Corporate Events',
-    description: 'Our service is tailored to meet your specific needs. We pride ourselves on our attention to detail, ensuring that every element of your event is customised to suit your brand and company values. We guarantee that your attendees will have an unforgettable experience that will leave a lasting impression.',
-    image: '/images/corporate.jpg',
-  },
-  {
-    title: 'Brand Launches',
-    description: "A successful brand launch is all about making a memorable impression. That's why we're here to help you create an unforgettable event that your guests and customers will remember for years to come. Our team is committed to helping your brand make a big impact.",
-    image: '/images/brand-launch.jpg',
-  },
-  {
-    title: 'Personal Security',
-    description: 'A successful event requires careful preparation, and ensuring the safety of everyone involved is key. Our personal security service complete with a driver provides you with peace of mind, knowing that a discreet and experienced team is watching over the event. You can trust us to prioritise your safety above all else.',
-    image: '/images/security.jpg',
-  },
-]
+import { useLanguage } from '@/lib/language-context'
 
 const features = [
-  { icon: CheckCircle, title: '100% Satisfaction Guarantee' },
-  { icon: Users, title: 'Commitment to Customers' },
-  { icon: Award, title: 'Highly Professional Team' },
-  { icon: Shield, title: 'Quality Control System' },
+  { icon: CheckCircle, key: 'feature.satisfaction' },
+  { icon: Users, key: 'feature.commitment' },
+  { icon: Award, key: 'feature.professional' },
+  { icon: Shield, key: 'feature.quality' },
 ]
 
 export default function Home() {
+  const { t } = useLanguage()
+
+  const services = [
+    { key: 'festivals', image: '/images/festival.jpg' },
+    { key: 'celebrity', image: '/images/celebrity.jpg' },
+    { key: 'corporate', image: '/images/corporate.jpg' },
+    { key: 'brand', image: '/images/brand-launch.jpg' },
+    { key: 'security', image: '/images/security.jpg' },
+  ]
+
   return (
     <main className="bg-[#0d0d0d] text-white overflow-x-hidden">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-bg.jpg"
@@ -59,24 +43,22 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0d0d0d]" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
           <FadeIn delay={200}>
             <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-6 font-medium">
-              About Us
+              {t('hero.about')}
             </p>
           </FadeIn>
 
           <FadeIn delay={400}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 leading-tight text-balance">
-              Your partner for exclusive{' '}
-              <span className="text-gold-gradient">luxury events</span>
+              {t('hero.title')}
             </h1>
           </FadeIn>
 
           <FadeIn delay={600}>
             <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Whether its a festival, celebrity appearance, corporate event, brand launches or just a high end VIP event Duncan McHugh CEO and his team can bring your vision to life. With 25 years experience our team are experts in media and promotion at the highest level
+              {t('hero.subtitle')}
             </p>
           </FadeIn>
 
@@ -85,12 +67,11 @@ export default function Home() {
               href="/contact"
               className="inline-block px-10 py-4 bg-[#c9a55a] text-[#0d0d0d] font-semibold rounded-sm hover:bg-[#d4b76a] transition-all duration-300 hover:shadow-lg hover:shadow-[#c9a55a]/20 uppercase tracking-wider text-sm"
             >
-              Get In Touch
+              {t('cta.button')}
             </Link>
           </FadeIn>
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown size={32} className="text-[#c9a55a]" />
         </div>
@@ -98,16 +79,16 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-20 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {features.map((feature, i) => {
               const Icon = feature.icon
               return (
                 <FadeIn key={i} delay={i * 100}>
-                  <div className="p-6 bg-[#1a1a1a] border border-white/10 rounded-sm hover:border-[#c9a55a]/50 transition-all duration-500 group text-center">
-                    <Icon className="w-8 h-8 text-[#c9a55a] mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <p className="text-sm text-white/70 group-hover:text-white transition-colors">
-                      {feature.title}
+                  <div className="p-4 md:p-6 bg-[#1a1a1a] border border-white/10 rounded-sm hover:border-[#c9a55a]/50 transition-all duration-500 group text-center">
+                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-[#c9a55a] mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300" />
+                    <p className="text-xs md:text-sm text-white/70 group-hover:text-white transition-colors">
+                      {t(feature.key)}
                     </p>
                   </div>
                 </FadeIn>
@@ -119,30 +100,27 @@ export default function Home() {
 
       {/* About Preview */}
       <section className="py-24 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeIn direction="left">
               <div>
-                <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm mb-4">About Us</p>
+                <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm mb-4">{t('about.title')}</p>
                 <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-                  A comprehensive solution for a seamless celebration
+                  {t('about.description')}
                 </h2>
-                <p className="text-white/60 leading-relaxed mb-8">
-                  Our experienced team brings creativity and precision to the table, ensuring your festival is a well-orchestrated spectacle. With a focus on safety, efficiency, and a flair for the extraordinary,
-                </p>
                 <Link
                   href="/about"
                   className="inline-block px-8 py-3 border border-[#c9a55a] text-[#c9a55a] hover:bg-[#c9a55a] hover:text-[#0d0d0d] transition-all duration-300 uppercase tracking-wider text-sm"
                 >
-                  Learn More
+                  {t('showcase.learnMore')}
                 </Link>
               </div>
             </FadeIn>
 
             <FadeIn direction="right" delay={200}>
-              <div className="relative h-[500px] rounded-sm overflow-hidden">
+              <div className="relative h-[400px] md:h-[500px] rounded-sm overflow-hidden">
                 <Image
-                  src="/images/showcase.jpg"
+                  src="/images/ceo-duncan.jpg"
                   alt="About DM Promotions"
                   fill
                   className="object-cover"
@@ -156,24 +134,24 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm mb-4">Our Services</p>
+              <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm mb-4">{t('services.title')}</p>
               <p className="text-white/60 max-w-2xl mx-auto">
-                Explore some of the services available at DM Promotions, however we cater to every event so if you have something unique in mind get in touch.
+                {t('services.subtitle')}
               </p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, i) => (
-              <FadeIn key={i} delay={i * 100}>
+              <FadeIn key={service.key} delay={i * 100}>
                 <div className="group relative overflow-hidden rounded-sm bg-[#1a1a1a] border border-white/5 hover:border-[#c9a55a]/30 transition-all duration-500">
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-48 md:h-56 overflow-hidden">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={t(`services.${service.key}`)}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -181,10 +159,10 @@ export default function Home() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-serif font-bold mb-3 text-[#c9a55a]">
-                      {service.title}
+                      {t(`services.${service.key}`)}
                     </h3>
                     <p className="text-white/50 text-sm leading-relaxed line-clamp-4">
-                      {service.description}
+                      {t(`services.${service.key}.desc`)}
                     </p>
                   </div>
                 </div>
@@ -197,19 +175,19 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-[#1a1a1a] to-[#0d0d0d] relative overflow-hidden">
         <div className="absolute inset-0 shimmer" />
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
-              Providing a premium service for your event
+              {t('cta.title')}
             </h2>
             <p className="text-white/60 text-lg mb-10">
-              Let a member of our team discuss how we can bring your event to the next level
+              {t('cta.subtitle')}
             </p>
             <Link
               href="/contact"
               className="inline-block px-10 py-4 bg-[#c9a55a] text-[#0d0d0d] font-semibold rounded-sm hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
             >
-              Contact Us
+              {t('cta.button')}
             </Link>
           </FadeIn>
         </div>
@@ -217,29 +195,29 @@ export default function Home() {
 
       {/* Events Section */}
       <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-4">Our Events</p>
+              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-4">{t('events.title')}</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-                Upcoming Events & Media Launches
+                {t('events.subtitle')}
               </h2>
             </div>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="bg-[#1a1a1a] border border-white/10 rounded-sm p-12 md:p-16 text-center">
-              <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-                {"Don't Hesitate to Use Our Services. Your Event Will Be Special."}
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-sm p-8 md:p-12 lg:p-16 text-center">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold mb-4">
+                {t('events.cta')}
               </h3>
               <p className="text-white/50 mb-8">
-                Let a member of our team discuss how we can bring your event to the next level
+                {t('cta.subtitle')}
               </p>
               <Link
                 href="/contact"
                 className="inline-block px-8 py-3 border border-[#c9a55a] text-[#c9a55a] hover:bg-[#c9a55a] hover:text-[#0d0d0d] transition-all duration-300 uppercase tracking-wider text-sm"
               >
-                Contact Us
+                {t('cta.button')}
               </Link>
             </div>
           </FadeIn>
@@ -248,20 +226,20 @@ export default function Home() {
 
       {/* Showcase Section */}
       <section className="py-24 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-4">Showcase</p>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold">Recent Events</h2>
+              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-4">{t('showcase.title')}</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold">{t('showcase.subtitle')}</h2>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <FadeIn direction="left">
-              <div className="relative h-[400px] rounded-sm overflow-hidden">
+              <div className="relative h-[350px] md:h-[400px] rounded-sm overflow-hidden">
                 <Image
-                  src="/images/showcase.jpg"
-                  alt="Diary of a CEO"
+                  src="/images/ceo-duncan.jpg"
+                  alt="Duncan McHugh CEO"
                   fill
                   className="object-cover"
                 />
@@ -270,18 +248,18 @@ export default function Home() {
 
             <FadeIn direction="right" delay={200}>
               <div>
-                <p className="text-[#c9a55a] text-sm uppercase tracking-wider mb-2">Diary of a CEO</p>
+                <p className="text-[#c9a55a] text-sm uppercase tracking-wider mb-2">{t('showcase.diary')}</p>
                 <h3 className="text-2xl md:text-3xl font-serif font-bold mb-6">
-                  Duncan McHugh: The Maverick Maestro of Music and Media
+                  {t('showcase.duncan.title')}
                 </h3>
                 <p className="text-white/60 leading-relaxed mb-6">
-                  Duncan McHugh CEO of DM Promotions has a team around him with 25 years experience in media and promotion at the highest level, dealing with the limelight and front page stories. Some of our trusted clients include Rolex, Ferrari and Bentley alongside A list celebrities such as Neil Diamond, Rhianna and Rita Ora.
+                  {t('showcase.duncan.desc')}
                 </p>
                 <Link
                   href="/about"
                   className="inline-block px-8 py-3 border border-[#c9a55a] text-[#c9a55a] hover:bg-[#c9a55a] hover:text-[#0d0d0d] transition-all duration-300 uppercase tracking-wider text-sm"
                 >
-                  Learn More
+                  {t('showcase.learnMore')}
                 </Link>
               </div>
             </FadeIn>
@@ -291,51 +269,55 @@ export default function Home() {
 
       {/* Blog Section */}
       <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-4">Our Blog</p>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold">Latest Reviews</h2>
+              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm mb-4">{t('blog.title')}</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold">{t('blog.subtitle')}</h2>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
             <FadeIn delay={100}>
-              <div className="group bg-[#1a1a1a] border border-white/5 rounded-sm overflow-hidden hover:border-[#c9a55a]/30 transition-all duration-500">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src="/images/ski.jpg"
-                    alt="Ski Review"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+              <Link href="/blog/ski-review" className="block group">
+                <div className="bg-[#1a1a1a] border border-white/5 rounded-sm overflow-hidden hover:border-[#c9a55a]/30 transition-all duration-500">
+                  <div className="relative h-48 md:h-56 overflow-hidden">
+                    <Image
+                      src="/images/sierra-nevada.jpg"
+                      alt="Ski Review"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif font-bold mb-3 text-[#c9a55a]">{t('blog.ski.title')}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed">
+                      {t('blog.ski.excerpt')}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-bold mb-3 text-[#c9a55a]">Ski Review</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">
-                    At DM Promotions, we are always on the lookout for the best destinations for our elite clientele. {"That's"} why we were thrilled to visit...
-                  </p>
-                </div>
-              </div>
+              </Link>
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="group bg-[#1a1a1a] border border-white/5 rounded-sm overflow-hidden hover:border-[#c9a55a]/30 transition-all duration-500">
-                <div className="relative h-56 overflow-hidden">
-                  <Image
-                    src="/images/showcase.jpg"
-                    alt="A CEO's Review"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+              <Link href="/blog/ceo-review" className="block group">
+                <div className="bg-[#1a1a1a] border border-white/5 rounded-sm overflow-hidden hover:border-[#c9a55a]/30 transition-all duration-500">
+                  <div className="relative h-48 md:h-56 overflow-hidden">
+                    <Image
+                      src="/images/vip-igloo.jpg"
+                      alt="A CEO's Review"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif font-bold mb-3 text-[#c9a55a]">{t('blog.ceo.title')}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed">
+                      {t('blog.ceo.excerpt')}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-bold mb-3 text-[#c9a55a]">{"A CEO's Review"}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">
-                    As a ski expert, I have visited resorts all around the world, but none of them impressed me as much as Sierra Nevada passion and rapidly...
-                  </p>
-                </div>
-              </div>
+              </Link>
             </FadeIn>
           </div>
 
@@ -343,29 +325,29 @@ export default function Home() {
           <FadeIn delay={300}>
             <div className="relative overflow-hidden rounded-sm">
               <Image
-                src="/images/ski.jpg"
+                src="/images/vip-igloo.jpg"
                 alt="Sierra Nevada"
                 fill
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d]/95 to-[#0d0d0d]/70" />
-              <div className="relative z-10 p-12 md:p-16 text-center">
+              <div className="relative z-10 p-8 md:p-12 lg:p-16 text-center">
                 <h3 className="text-2xl md:text-4xl font-serif font-bold mb-3">
-                  Exclusive Sierra Nevada Sponsorship Packages
+                  {t('blog.sierra.title')}
                 </h3>
-                <p className="text-[#c9a55a] text-lg mb-8">VIP Igloos Now Available</p>
+                <p className="text-[#c9a55a] text-lg mb-8">{t('blog.sierra.subtitle')}</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/contact"
                     className="inline-block px-8 py-3 bg-[#c9a55a] text-[#0d0d0d] font-semibold hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
                   >
-                    Contact
+                    {t('nav.contact')}
                   </Link>
                   <Link
-                    href="/about"
+                    href="/blog"
                     className="inline-block px-8 py-3 border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 uppercase tracking-wider text-sm"
                   >
-                    Learn More
+                    {t('showcase.learnMore')}
                   </Link>
                 </div>
               </div>

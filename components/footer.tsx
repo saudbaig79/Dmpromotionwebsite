@@ -1,37 +1,53 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Instagram } from 'lucide-react'
+import { useLanguage } from '@/lib/language-context'
 
 export function Footer() {
+  const { t } = useLanguage()
+
+  const links = [
+    { href: '/', label: t('nav.home') },
+    { href: '/about', label: t('nav.about') },
+    { href: '/services', label: t('nav.services') },
+    { href: '/events', label: t('nav.events') },
+    { href: '/blog', label: t('nav.blog') },
+    { href: '/contact', label: t('nav.contact') },
+  ]
+
   return (
-    <footer className="bg-[#0d0d0d] border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+    <footer className="bg-[#0a0a0a] border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Logo & Description */}
           <div>
             <Image
               src="/logo.png"
               alt="DM Promotions"
-              width={140}
-              height={45}
-              className="h-10 w-auto object-contain mb-6"
+              width={180}
+              height={60}
+              className="h-12 w-auto object-contain mb-6"
             />
-            <p className="text-white/50 text-sm leading-relaxed">
-              Your partner for exclusive luxury events. With 25 years experience in media and promotion at the highest level.
+            <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+              {t('hero.subtitle').substring(0, 120)}...
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#c9a55a] font-semibold mb-6 text-sm uppercase tracking-wider">Quick Links</h4>
-            <div className="flex flex-col gap-3">
-              {['Home', 'About', 'Services', 'Contact'].map((link) => (
+            <h4 className="text-[#c9a55a] font-semibold mb-6 text-sm uppercase tracking-wider">
+              Quick Links
+            </h4>
+            <div className="grid grid-cols-2 gap-3">
+              {links.map((link) => (
                 <Link
-                  key={link}
-                  href={link === 'Home' ? '/' : `/${link.toLowerCase()}`}
+                  key={link.href}
+                  href={link.href}
                   className="text-white/50 hover:text-[#c9a55a] transition-colors text-sm"
                 >
-                  {link}
+                  {link.label}
                 </Link>
               ))}
             </div>
@@ -39,7 +55,9 @@ export function Footer() {
 
           {/* Social & Contact */}
           <div>
-            <h4 className="text-[#c9a55a] font-semibold mb-6 text-sm uppercase tracking-wider">Connect</h4>
+            <h4 className="text-[#c9a55a] font-semibold mb-6 text-sm uppercase tracking-wider">
+              Connect
+            </h4>
             <a
               href="https://instagram.com"
               target="_blank"
@@ -47,14 +65,14 @@ export function Footer() {
               className="inline-flex items-center gap-2 text-white/50 hover:text-[#c9a55a] transition-colors text-sm"
             >
               <Instagram size={18} />
-              <span>Visit our Instagram</span>
+              <span>{t('aboutPage.instagram')}</span>
             </a>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-white/30 text-sm">
-            © {new Date().getFullYear()} DM Media Group. All rights reserved.
+            © {new Date().getFullYear()} DM Media Group. {t('footer.rights')}
           </p>
         </div>
       </div>
