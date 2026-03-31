@@ -42,11 +42,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth" style={{
+    <html lang="en" className="scroll-smooth" style={{
       '--font-playfair': playfair.style.fontFamily,
       '--font-inter': inter.style.fontFamily,
     } as React.CSSProperties}>
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body className={`${inter.className} antialiased bg-[#0d0d0d] text-white`}>
         {children}
         <Analytics />
       </body>
