@@ -195,13 +195,6 @@ export default function Home() {
 
           <FadeIn delay={200}>
             <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 sm:p-12 lg:p-16 text-center">
-              <Image
-                src="/logo.png"
-                alt="DM Promotions"
-                width={160}
-                height={53}
-                className="h-14 w-auto object-contain mx-auto mb-8 opacity-70"
-              />
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-6">
                 {t('events.cta')}
               </h3>
@@ -237,7 +230,7 @@ export default function Home() {
             <FadeIn direction="left">
               <div className="relative aspect-[4/3] rounded overflow-hidden">
                 <Image
-                  src="/images/showcase.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png"
                   alt="Duncan McHugh CEO"
                   fill
                   className="object-cover"

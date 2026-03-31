@@ -127,7 +127,7 @@ export default function AboutPage() {
             <FadeIn direction="right" delay={200}>
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
                 <Image
-                  src="/images/showcase.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png"
                   alt="Duncan McHugh, CEO"
                   fill
                   className="object-cover"
