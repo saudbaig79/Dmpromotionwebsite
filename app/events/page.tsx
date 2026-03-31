@@ -1,31 +1,54 @@
 'use client'
 
-import Link from 'next/link'
+import Image from 'next/image'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
+import { useI18n } from '@/lib/i18n'
 
 export default function EventsPage() {
-  const events = [
+  const { t } = useI18n()
+
+  const sections = [
     {
-      id: 'murder-mystery-tv-show',
-      title: 'Murder Mystery TV Show',
+      title: t('murder.plot'),
+      description: t('murder.plotDesc'),
+      image: '/images/murder-dining.jpg',
     },
     {
-      id: 'secret-service',
-      title: 'Secret Service',
+      title: t('murder.friend'),
+      description: t('murder.friendDesc'),
+      image: '/images/celebrity.jpg',
     },
     {
-      id: 'mountain-mystery',
-      title: 'Mountain Mystery',
+      title: t('murder.cinema'),
+      description: t('murder.cinemaDesc'),
+      image: '/images/murder-mystery-hero.jpg',
     },
     {
-      id: 'red-carpet',
-      title: 'Red Carpet',
+      title: t('murder.location'),
+      description: t('murder.locationDesc'),
+      image: '/images/murder-location.jpg',
     },
     {
-      id: 'shine',
-      title: 'Shine',
+      title: t('murder.props'),
+      description: t('murder.propsDesc'),
+      image: '/images/murder-props.jpg',
+    },
+    {
+      title: t('murder.screen'),
+      description: t('murder.screenDesc'),
+      image: '/images/corporate.jpg',
+    },
+    {
+      title: t('murder.host'),
+      description: t('murder.hostDesc'),
+      image: '/images/murder-host.jpg',
+    },
+    {
+      title: t('murder.treatment'),
+      description: t('murder.treatmentDesc'),
+      image: '/images/brand-launch.jpg',
     },
   ]
 
@@ -34,90 +57,161 @@ export default function EventsPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-[#0d0d0d]" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#c9a55a]/5 rounded-full blur-3xl" />
+          <Image
+            src="/images/murder-mystery-hero.jpg"
+            alt="Murder Mystery Experience"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[#0d0d0d]" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
           <FadeIn delay={100}>
             <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-6">
-              OUR EVENTS
+              {t('murder.subtitle')}
             </p>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-8 text-balance">
-              Upcoming Events & Media Launches
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-8">
+              {t('murder.title')}
             </h1>
           </FadeIn>
 
           <FadeIn delay={300}>
             <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-              Explore our exclusive collection of premium events and experiences designed for discerning guests.
+              {t('murder.intro')}
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="py-24 bg-[#111111]">
+      {/* Innovation Section */}
+      <section className="py-20 bg-[#111111]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#c9a55a]">
+              {t('murder.innovation')}
+            </h2>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Content Sections */}
+      <section className="py-24 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, i) => (
-              <FadeIn key={i} delay={i * 100} direction="up">
-                <Link href={`/events/${event.id}`} className="group block">
-                  <div className="h-full p-8 bg-[#1a1a1a] border border-white/10 rounded hover:border-[#c9a55a]/50 transition-all duration-500 flex flex-col justify-center">
-                    <h3 className="text-2xl font-serif font-bold text-white group-hover:text-[#c9a55a] transition-colors">
-                      {event.title}
-                    </h3>
+          <div className="space-y-32">
+            {sections.map((section, i) => (
+              <FadeIn key={i} delay={100}>
+                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center`}>
+                  <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="relative aspect-[4/3] rounded overflow-hidden group">
+                      <Image
+                        src={section.image}
+                        alt={section.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/60 via-transparent to-transparent" />
+                    </div>
                   </div>
-                </Link>
+
+                  <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-[#c9a55a]">
+                      {section.title}
+                    </h2>
+                    <p className="text-white/60 text-lg leading-relaxed">
+                      {section.description}
+                    </p>
+                  </div>
+                </div>
               </FadeIn>
             ))}
-          </div>
-
-          {/* All Available Events List */}
-          <div className="mt-16 bg-[#1a1a1a] border border-white/10 rounded-lg p-8 sm:p-12">
-            <h2 className="text-2xl font-serif font-bold text-white mb-8 text-center">
-              All Available Events
-            </h2>
-            <div className="space-y-3">
-              {events.map((event) => (
-                <Link
-                  key={event.id}
-                  href={`/events/${event.id}`}
-                  className="group flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 rounded transition-colors duration-300"
-                >
-                  <span className="text-white group-hover:text-[#c9a55a] transition-colors font-medium">
-                    {event.title}
-                  </span>
-                  <span className="text-[#c9a55a] text-sm">→</span>
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#0d0d0d] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#c9a55a]/10 via-[#c9a55a]/5 to-[#c9a55a]/10" />
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+      {/* Team Building Section */}
+      <section className="py-20 bg-[#111111]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
-              Don&apos;t Hesitate to Use Our Services
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+              {t('murder.team')}
             </h2>
-            <p className="text-white/60 mb-10 text-lg">
-              Your Event Will Be Special
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-10 py-4 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
-            >
-              Contact Us
-            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Registration Form */}
+      <section className="py-24 bg-[#0d0d0d]">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 sm:p-12">
+              <h3 className="text-xl font-serif font-bold text-white mb-4 text-center">
+                {t('murder.register')}
+              </h3>
+              <p className="text-white/50 text-sm text-center mb-8">
+                {t('murder.disclaimer')}
+              </p>
+
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Name</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Phone</label>
+                  <input
+                    type="tel"
+                    className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                    placeholder="Your phone number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Company Name</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                    placeholder="Your company"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Email</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
+                    placeholder="your@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-white/70 text-sm mb-2">Message</label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors resize-none"
+                    placeholder="Tell us about your interest..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-8 py-4 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
           </FadeIn>
         </div>
       </section>

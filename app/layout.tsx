@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" style={{
+    <html lang="en" className="scroll-smooth" style={{
       '--font-playfair': playfair.style.fontFamily,
       '--font-inter': inter.style.fontFamily,
     } as React.CSSProperties}>
