@@ -24,9 +24,9 @@ export function Footer() {
           {/* Logo & Description */}
           <div>
             <Image
-              src="/logo.png"
+              src="/dm-logo.png"
               alt="DM Promotions"
-              width={180}
+              width={220}
               height={60}
               className="h-12 w-auto object-contain mb-6"
             />

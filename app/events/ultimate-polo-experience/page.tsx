@@ -176,6 +176,37 @@ export default function PoloExperiencePage() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+                Experience the Action
+              </h2>
+              <p className="text-white/60 max-w-2xl mx-auto">
+                Watch highlights from our most prestigious polo tournaments
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={100}>
+            <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden border border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300 shadow-2xl shadow-emerald-500/10">
+              <video
+                width="100%"
+                height="100%"
+                controls
+                className="w-full h-full object-cover"
+                poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imgi_58_373637_248d11bb7dd342e18f9e090a742fb2cb~mv2-AiGMt6jTNrsg1ei5UUE0rf5bfNI7HE.jpg"
+              >
+                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/v%20-%20Trim-ub79E8cSyLai3gk3AybBI0bsR6pj83.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section className="py-24 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

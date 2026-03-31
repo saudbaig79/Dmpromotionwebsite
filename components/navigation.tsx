@@ -46,9 +46,9 @@ export function Navigation() {
           {/* Logo - just the image, properly sized with object-contain */}
           <Link href="/" className="relative group flex-shrink-0">
             <Image
-              src="/logo.png"
+              src="/dm-logo.png"
               alt="DM Promotions"
-              width={180}
+              width={220}
               height={60}
               className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               priority
