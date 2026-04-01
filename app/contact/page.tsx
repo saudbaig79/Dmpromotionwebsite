@@ -148,21 +148,6 @@ export default function ContactPage() {
                 </form>
               </div>
             </FadeIn>
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={6}
-                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-4 bg-[#c9a55a] text-black font-semibold hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm rounded"
-                  >
-                    {t('contact.submit')}
-                  </button>
-                </form>
-              </div>
-            </FadeIn>
 
             {/* Contact Info */}
             <FadeIn direction="right" delay={200}>

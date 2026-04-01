@@ -125,14 +125,15 @@ export default function AboutPage() {
             </FadeIn>
 
             <FadeIn direction="right" delay={200}>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-8QCVDEn8SlteD8gZIq8KHZrTVIGjUz.png"
-                alt="Duncan McHugh, CEO"
-                width={500}
-                height={600}
-                className="rounded-lg shadow-2xl shadow-[#c9a55a]/20 border border-[#c9a55a]/30"
-              />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-8QCVDEn8SlteD8gZIq8KHZrTVIGjUz.png"
+                  alt="Duncan McHugh, CEO"
+                  width={500}
+                  height={600}
+                  className="rounded-lg shadow-2xl shadow-[#c9a55a]/20 border border-[#c9a55a]/30"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg" />
               </div>
             </FadeIn>
           </div>
