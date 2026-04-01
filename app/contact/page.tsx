@@ -183,7 +183,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="bg-[#1a1a1a] border border-white/10 rounded p-8">
-                    <h3 className="text-xl font-serif font-bold mb-4">{t('contact.whyChoose')}</h3>
+                    <h3 className="text-xl font-serif font-bold mb-4">Why Choose Us</h3>
                     <ul className="space-y-3 text-white/60">
                       <li className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-[#c9a55a] rounded-full" />
