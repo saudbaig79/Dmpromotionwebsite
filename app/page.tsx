@@ -278,6 +278,29 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-16">
             <FadeIn delay={100} direction="up">
+              <Link href="/blog/ski-review" className="group block">
+                <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
+                  <div className="aspect-video relative overflow-hidden">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/debbie-FDLdmoSEMI3diF6055yo7zLyPv2sdn.jpg"
+                      alt="Ski Review"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
+                      Ski Review
+                    </h3>
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      Sierra Nevada with Debbie Wingham - Europe&apos;s premier alpine destination
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
+
+            <FadeIn delay={200} direction="up">
               <Link href="/blog/ceo-review" className="group block">
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
                   <div className="aspect-video relative overflow-hidden">
@@ -290,33 +313,10 @@ export default function Home() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
-                      {t('blog.ceoTitle')}
+                      CEO Review
                     </h3>
                     <p className="text-white/60 text-sm leading-relaxed">
-                      {t('blog.ceoDesc')}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={200} direction="up">
-              <Link href="/blog/ceo-review" className="group block">
-                <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
-                  <div className="aspect-video relative overflow-hidden">
-                    <Image
-                      src="/images/showcase.jpg"
-                      alt="CEO Review"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
-                      {t('blog.ceoTitle')}
-                    </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {t('blog.ceoDesc')}
+                      Duncan McHugh on creating unforgettable luxury experiences worldwide
                     </p>
                   </div>
                 </div>

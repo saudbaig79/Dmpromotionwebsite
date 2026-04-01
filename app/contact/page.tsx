@@ -204,17 +204,6 @@ export default function ContactPage() {
                     </ul>
                   </div>
                 </div>
-
-                {/* Logo */}
-                <div className="mt-12 flex justify-center">
-                  <Image
-                    src="/logo.png"
-                    alt="DM Promotions"
-                    width={200}
-                    height={65}
-                    className="h-16 w-auto object-contain opacity-60"
-                  />
-                </div>
               </div>
             </FadeIn>
           </div>

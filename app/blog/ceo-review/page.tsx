@@ -24,7 +24,7 @@ export default function CeoReviewPage() {
               {t('blog.title')}
             </Link>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white">
-              {t('blog.ceoTitle')}
+              CEO Review
             </h1>
           </FadeIn>
         </div>
@@ -37,7 +37,7 @@ export default function CeoReviewPage() {
             <div className="relative aspect-video rounded overflow-hidden mb-12">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-8QCVDEn8SlteD8gZIq8KHZrTVIGjUz.png"
-                alt="Duncan McHugh"
+                alt="Duncan McHugh, CEO"
                 fill
                 className="object-cover"
               />
@@ -45,21 +45,36 @@ export default function CeoReviewPage() {
           </FadeIn>
 
           <FadeIn delay={300}>
-            <div className="prose prose-invert prose-lg max-w-none">
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
-                As a ski expert, I have visited resorts all around the world, but none of them impressed me as much as Sierra Nevada. The passion and rapidly evolving infrastructure make it a standout destination for luxury travelers.
+            <div className="space-y-6 text-white/70 leading-relaxed">
+              <p className="text-lg font-semibold text-white">
+                Duncan McHugh, CEO of DM Promotions, shares his vision on creating unforgettable luxury experiences and building meaningful connections with the world&apos;s most influential figures.
               </p>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
-                The VIP Igloo experience is something truly unique. Imagine enjoying a gourmet meal in a private, heated igloo with panoramic views of the snow-capped peaks. It&apos;s an experience that combines exclusivity with the raw beauty of nature.
+
+              <div className="bg-[#1a1a1a] border-l-4 border-[#c9a55a] p-8 my-8">
+                <p className="text-white italic mb-4">
+                  &quot;Sierra Nevada ski resort has the right blend of people I can work with to satisfy our high-end clients. It has a luxury bubble of 5-star skiing heaven, where you can enjoy the best of both worlds: the snow and the sun, the mountains and the sea, the tradition and the innovation. It&apos;s a place where you can have fun, relax, and be inspired.&quot;
+                </p>
+                <p className="text-[#c9a55a] font-semibold">— Duncan McHugh, CEO of DM Promotions</p>
+              </div>
+
+              <p>
+                At DM Promotions, our mission is to curate experiences that transcend ordinary expectations. We work with football stars, singers, Hollywood A-list celebrities, and dignitaries from around the globe who seek more than just a vacation—they seek transformation and inspiration.
               </p>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
-                The resort&apos;s commitment to excellence is evident in every detail - from the expertly groomed slopes to the attentive service at every touchpoint. The ski instructors are world-class, many having competed at international levels.
+
+              <p>
+                Our network spans continents and industries. We believe that the best experiences happen when the right people converge in the right environment. Whether it&apos;s a championship polo tournament in Spain, an exclusive ski retreat in the Sierra Nevada, or a bespoke yacht experience in the Mediterranean, we ensure every detail reflects excellence.
               </p>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
-                What particularly impressed me was the attention to privacy. For high-profile guests, the resort offers discreet access and dedicated facilities that ensure a peaceful, exclusive experience.
+
+              <p>
+                The future of luxury travel and entertainment lies in personalization, authenticity, and connection. We&apos;re not just creating events—we&apos;re creating memories that will be cherished for a lifetime. From the initial concept to the final toast, every element is designed with precision and care.
               </p>
-              <p className="text-white/70 text-lg leading-relaxed">
-                I wholeheartedly recommend Sierra Nevada to anyone seeking a premium ski experience with unmatched service and stunning scenery.
+
+              <p>
+                Our partnerships with the world&apos;s most prestigious venues, resorts, and service providers allow us to deliver experiences that are truly one-of-a-kind. We pride ourselves on understanding the needs and desires of our clientele, often anticipating requests before they&apos;re even made.
+              </p>
+
+              <p>
+                As we continue to expand our portfolio of exclusive experiences, we remain committed to the principles that have made DM Promotions a leader in the industry: integrity, innovation, and an unwavering dedication to excellence.
               </p>
             </div>
           </FadeIn>
