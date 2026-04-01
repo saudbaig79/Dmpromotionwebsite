@@ -16,6 +16,7 @@ export function Footer() {
     { href: '/events', label: t('nav.events') },
     { href: '/blog', label: t('nav.blog') },
     { href: '/contact', label: t('nav.contact') },
+    { href: '/policy', label: 'Cancellation Policy' },
   ]
 
   return (
