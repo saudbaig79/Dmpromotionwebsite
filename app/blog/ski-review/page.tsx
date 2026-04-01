@@ -62,7 +62,9 @@ export default function SkiReviewPage() {
                 <p className="text-white italic mb-4">
                   &quot;Sierra Nevada ski resort is a gem in the heart of Spain. It has everything you need for a perfect ski holiday: quality, comfort, style, and glamour. I loved the resort&apos;s facilities, especially the spa, the heated pool, and the cozy fireplace. I also enjoyed the resort&apos;s art and culture, with exhibitions, concerts, and festivals throughout the year.&quot;
                 </p>
-                <p className="text-[#c9a55a] font-semibold">— Debbie Wingham, Multimedia Artist &amp; Creative Innovator</p>
+                <p className="text-[#c9a55a] font-semibold">
+                  — Debbie Wingham, Multimedia Artist &amp; Creative Innovator
+                </p>
               </div>
 
               <p>
