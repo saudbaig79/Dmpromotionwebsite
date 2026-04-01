@@ -90,11 +90,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Contact Page
     'contact.title': 'Get in Touch Today',
-    'contact.firstName': 'First name',
-    'contact.lastName': 'Last name',
+    'contact.sendMessage': 'Send Message',
+    'contact.getInTouch': 'Get In Touch',
+    'contact.firstName': 'First Name',
+    'contact.lastName': 'Last Name',
     'contact.email': 'Email',
-    'contact.company': 'Company name',
+    'contact.company': 'Company Name',
     'contact.message': 'Message',
+    'contact.send': 'Send Message',
     'contact.submit': 'Submit',
     
     // Events/Murder Mystery Page
@@ -204,11 +207,14 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Contact Page
     'contact.title': 'Ponte en contacto hoy',
+    'contact.sendMessage': 'Enviar Mensaje',
+    'contact.getInTouch': 'Ponte en Contacto',
     'contact.firstName': 'Nombre',
     'contact.lastName': 'Apellido',
     'contact.email': 'Correo electrónico',
     'contact.company': 'Nombre de la empresa',
     'contact.message': 'Mensaje',
+    'contact.send': 'Enviar Mensaje',
     'contact.submit': 'Enviar',
     
     // Events/Murder Mystery Page

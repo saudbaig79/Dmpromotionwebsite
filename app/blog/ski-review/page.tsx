@@ -36,8 +36,8 @@ export default function SkiReviewPage() {
           <FadeIn delay={200}>
             <div className="relative aspect-video rounded overflow-hidden mb-12">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/debbie-FDLdmoSEMI3diF6055yo7zLyPv2sdn.jpg"
-                alt="Debbie Wingham at Sierra Nevada"
+                src="/sierra-nevada.jpg"
+                alt="Sierra Nevada Ski Resort"
                 fill
                 className="object-cover"
               />
