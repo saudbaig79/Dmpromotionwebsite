@@ -244,6 +244,37 @@ export default function MurderMysteryPage() {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-24 bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+                Experience the Mystery
+              </h2>
+              <p className="text-white/60 max-w-2xl mx-auto">
+                Watch highlights from our most spectacular murder mystery events
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={100}>
+            <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden border border-[#c9a55a]/30 hover:border-[#c9a55a]/60 transition-all duration-300 shadow-2xl shadow-[#c9a55a]/10">
+              <video
+                width="100%"
+                height="100%"
+                controls
+                className="w-full h-full object-cover"
+                poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imgi_8_haunted%20casa-wj4SE7NH1TL1suo23RjPi38AW80Qvy.jpg"
+              >
+                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Murder%20Mystery%20Experience%20-%20Dmproductions-gkElO1pA8l7kPdRu6xcfp5EXnhlD9Z.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section id="gallery" className="py-24 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

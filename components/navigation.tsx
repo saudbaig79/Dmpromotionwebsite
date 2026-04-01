@@ -18,6 +18,7 @@ export function Navigation() {
     { href: '/services', label: t('nav.services') },
     { href: '/whats-on', label: "What's On" },
     { href: '/events', label: t('nav.events') },
+    { href: '/polo', label: 'The Polo Experience' },
     { href: '/sponsorship', label: 'Sponsorship' },
     { href: '/behind-the-scenes', label: 'Behind the Scenes' },
     { href: '/blog', label: t('nav.blog') },

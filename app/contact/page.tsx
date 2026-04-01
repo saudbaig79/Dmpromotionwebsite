@@ -17,11 +17,30 @@ export default function ContactPage() {
     company: '',
     message: '',
   })
+  const [submitStatus, setSubmitStatus] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          to: 'dmpromotions@europe.com'
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' })
+        setTimeout(() => setSubmitStatus(''), 3000)
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+    }
   }
 
   return (
@@ -43,7 +62,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-24 bg-[#0d0d0d]">
+      <section className="py-16 md:py-24 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Form */}
@@ -55,37 +74,40 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm text-white/70 mb-2">{t('contact.firstName')}</label>
+                      <label className="block text-sm text-white/70 mb-3">{t('contact.firstName')}</label>
                       <input
                         type="text"
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                        required
                         className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-white/70 mb-2">{t('contact.lastName')}</label>
+                      <label className="block text-sm text-white/70 mb-3">{t('contact.lastName')}</label>
                       <input
                         type="text"
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                        required
                         className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm text-white/70 mb-2">{t('contact.email')}</label>
+                    <label className="block text-sm text-white/70 mb-3">{t('contact.email')}</label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
                       className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm text-white/70 mb-2">{t('contact.company')}</label>
+                    <label className="block text-sm text-white/70 mb-3">{t('contact.company')}</label>
                     <input
                       type="text"
                       value={formData.company}
@@ -95,9 +117,37 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm text-white/70 mb-2">{t('contact.message')}</label>
+                    <label className="block text-sm text-white/70 mb-3">{t('contact.message')}</label>
                     <textarea
                       value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                      rows={6}
+                      className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors resize-none"
+                    />
+                  </div>
+
+                  {submitStatus === 'success' && (
+                    <div className="p-4 bg-green-500/20 border border-green-500/50 rounded text-green-400 text-sm">
+                      Message sent successfully! We&apos;ll get back to you soon.
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="p-4 bg-red-500/20 border border-red-500/50 rounded text-red-400 text-sm">
+                      Error sending message. Please try again.
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-[#c9a55a] hover:bg-[#d4b76a] text-black font-semibold rounded transition-colors duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('contact.send')}
+                  </button>
+                </form>
+              </div>
+            </FadeIn>
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={6}
                       className="w-full px-4 py-3 bg-[#0d0d0d] border border-white/10 rounded text-white placeholder-white/30 focus:border-[#c9a55a] focus:outline-none transition-colors resize-none"

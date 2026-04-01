@@ -47,13 +47,6 @@ export default function EventsPage() {
       description: 'Prestigious awards ceremony celebrating excellence with TV coverage and A-list celebrities.',
       category: 'Awards Ceremony',
     },
-    {
-      id: 'ultimate-polo-experience',
-      slug: 'ultimate-polo-experience',
-      title: 'The Ultimate Polo Experience',
-      description: 'Championship polo combined with luxury hospitality, world-class venues, and elite networking.',
-      category: 'Elite Sport Experience',
-    },
   ]
 
   const activeEventData = events.find(e => e.slug === activeEvent) || events[0]

@@ -36,8 +36,8 @@ export default function CeoReviewPage() {
           <FadeIn delay={200}>
             <div className="relative aspect-video rounded overflow-hidden mb-12">
               <Image
-                src="/images/showcase.jpg"
-                alt="VIP Experience"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-8QCVDEn8SlteD8gZIq8KHZrTVIGjUz.png"
+                alt="Duncan McHugh"
                 fill
                 className="object-cover"
               />

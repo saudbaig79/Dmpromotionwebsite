@@ -72,7 +72,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-white/30 text-sm">
-            © {new Date().getFullYear()} DM Media Group. {t('footer.rights')}
+            {t('footer.rights')}
           </p>
         </div>
       </div>
