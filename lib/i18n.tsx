@@ -29,6 +29,11 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.professional': 'Highly Professional Team',
     'hero.quality': 'Quality Control System',
     'hero.aboutBtn': 'About Us',
+    'hero.whyChoose': 'Why Choose Us',
+    'hero.guarantee': '100% Satisfaction Guarantee',
+    'hero.commitment2': 'Commitment to Customers',
+    'hero.professional2': 'Highly Professional Team',
+    'hero.quality2': 'Quality Control System',
     
     // Services
     'services.title': 'Our Services',
@@ -146,6 +151,11 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.professional': 'Equipo altamente profesional',
     'hero.quality': 'Sistema de control de calidad',
     'hero.aboutBtn': 'Sobre nosotros',
+    'hero.whyChoose': 'Por qué elegirnos',
+    'hero.guarantee': 'Garantía de satisfacción del 100%',
+    'hero.commitment2': 'Compromiso con los clientes',
+    'hero.professional2': 'Equipo altamente profesional',
+    'hero.quality2': 'Sistema de control de calidad',
     
     // Services
     'services.title': 'Servicios',

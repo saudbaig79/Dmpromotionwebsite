@@ -34,12 +34,12 @@ export default function SkiReviewPage() {
       <section className="pb-24 bg-[#0d0d0d]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn delay={200}>
-            <div className="relative aspect-video rounded overflow-hidden mb-12">
+            <div className="relative aspect-square rounded overflow-hidden mb-12">
               <Image
-                src="/sierra-nevada.jpg"
-                alt="Sierra Nevada Ski Resort"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/debbie-FDLdmoSEMI3diF6055yo7zLyPv2sdn.jpg"
+                alt="Debbie Wingham at Sierra Nevada"
                 fill
-                className="object-cover"
+                className="object-contain bg-black"
               />
             </div>
           </FadeIn>

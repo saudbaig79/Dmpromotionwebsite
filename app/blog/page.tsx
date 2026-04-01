@@ -19,7 +19,7 @@ export default function BlogPage() {
       author: 'Duncan McHugh',
       date: 'March 2026',
       excerpt: 'At DM Promotions, we are always on the lookout for the best destinations for our elite clientele. That\'s why we were thrilled to visit the most exclusive ski resorts in the world.',
-      image: '/images/ski.jpg',
+      image: '/sierra-nevada.jpg',
       category: 'Travel & Destinations',
     },
     {
@@ -29,7 +29,7 @@ export default function BlogPage() {
       author: 'Duncan McHugh',
       date: 'March 2026',
       excerpt: 'As a ski expert, I have visited resorts all around the world, but none of them impressed me as much as Sierra Nevada passion and rapidly growing reputation as a world-class destination.',
-      image: '/images/showcase.jpg',
+      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-8QCVDEn8SlteD8gZIq8KHZrTVIGjUz.png',
       category: 'Expert Reviews',
     },
     {

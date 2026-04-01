@@ -282,7 +282,7 @@ export default function Home() {
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/debbie-FDLdmoSEMI3diF6055yo7zLyPv2sdn.jpg"
+                      src="/sierra-nevada.jpg"
                       alt="Ski Review"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
