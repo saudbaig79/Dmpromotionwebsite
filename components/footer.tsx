@@ -12,6 +12,7 @@ export function Footer() {
     { href: '/', label: t('nav.home') },
     { href: '/about', label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
+    { href: '/polo', label: 'The Polo Experience' },
     { href: '/events', label: t('nav.events') },
     { href: '/blog', label: t('nav.blog') },
     { href: '/contact', label: t('nav.contact') },
@@ -59,7 +60,7 @@ export function Footer() {
               Connect
             </h4>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/dmpromotions_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-white/50 hover:text-[#c9a55a] transition-colors text-sm"
