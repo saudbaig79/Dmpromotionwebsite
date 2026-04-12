@@ -89,7 +89,7 @@ export default function AirTravel() {
                       src={image}
                       alt={`Luxury air transport ${i + 1}`}
                       fill
-                      className="object-cover hover:scale-105 transition-transform duration-300"
+                      className="object-cover object-center hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </FadeIn>
@@ -109,7 +109,7 @@ export default function AirTravel() {
                           src={video.poster}
                           alt={`Air charter video ${i + 1} thumbnail`}
                           fill
-                          className="object-cover"
+                          className="object-cover object-center"
                         />
                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all flex items-center justify-center">
                           <Play size={48} className="text-[#c9a55a]" fill="currentColor" />

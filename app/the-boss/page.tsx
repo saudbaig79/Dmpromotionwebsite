@@ -90,7 +90,7 @@ export default function TheBoss() {
                   src={images[currentImageIndex].src}
                   alt={images[currentImageIndex].alt}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   priority
                 />
               </div>
@@ -113,7 +113,7 @@ export default function TheBoss() {
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                     />
                   </button>
                 ))}

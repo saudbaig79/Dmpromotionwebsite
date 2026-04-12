@@ -38,8 +38,6 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Exclusive Services',
     'services.subtitle': 'Exclusive service by application only. VIPs, celebrities, sports men & women, and all those just living a luxury lifestyle qualify for our exclusive and elite packages.',
-    'services.festivals': 'Festivals',
-    'services.festivalsDesc': 'A comprehensive solution for a seamless celebration. Our experienced team brings creativity and precision to the table, ensuring your festival is a well-orchestrated spectacle. With a focus on safety, efficiency, and a flair for the extraordinary,',
     'services.celebrity': 'Celebrity Appearances',
     'services.celebrityDesc': 'Elevate your event with an appearance from a well known celebrity guest. Our team have connections with numerous celebrities including Bruno Mars, Rhianna, Katy Perry, Mike Tyson to name a few. For a full list of celebrities available enquire today.',
     'services.corporate': 'Corporate Events',
