@@ -5,11 +5,18 @@ import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
+import { useState } from 'react'
+import { Play } from 'lucide-react'
 
 export default function AirTravel() {
+  const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({})
+
   const jetImages = [
     'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29.webp-sKVR9GJKvs2Oa8m7NyIIchNCCa2fr8.jpeg',
     'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%282%29-nQWrQYhPLtshRvQISaygkNn3TlLYjI.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jet-tcbmUGyBuRswxZJ63wbRvU1RnApzm8.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jet%20%281%29-kmivuwq53bMqnwf2R2JGgmrpIpOPBZ.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jet%20%282%29-YbOwoP0Kcyvfj79GRONgtPbwCCSj0K.jpg',
   ]
 
   const helicopterImages = [
@@ -17,10 +24,29 @@ export default function AirTravel() {
   ]
 
   const jetVideos = [
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29-8zZtvJ8FaHO4GCLJ7M2L3mBKE4zQZ2.mp4',
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%282%29-Fys5ygT7m6Udg7lXgFwuQ9awDm1UwX.mp4',
-    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%283%29-m4ArhtguJ9QWiJbULzgzvjcuWnzY84.mp4',
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29-8zZtvJ8FaHO4GCLJ7M2L3mBKE4zQZ2.mp4',
+      poster: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29.webp-sKVR9GJKvs2Oa8m7NyIIchNCCa2fr8.jpeg',
+      id: 'jet-1'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%282%29-Fys5ygT7m6Udg7lXgFwuQ9awDm1UwX.mp4',
+      poster: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%282%29-nQWrQYhPLtshRvQISaygkNn3TlLYjI.jpg',
+      id: 'jet-2'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%283%29-m4ArhtguJ9QWiJbULzgzvjcuWnzY84.mp4',
+      poster: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jet%20%281%29-kmivuwq53bMqnwf2R2JGgmrpIpOPBZ.jpg',
+      id: 'jet-3'
+    },
   ]
+
+  const toggleVideoPlay = (videoId: string) => {
+    setPlayingVideos(prev => ({
+      ...prev,
+      [videoId]: !prev[videoId]
+    }))
+  }
 
   return (
     <main className="bg-[#0d0d0d] min-h-screen">
@@ -67,11 +93,28 @@ export default function AirTravel() {
             <div className="grid md:grid-cols-3 gap-6">
               {jetVideos.map((video, i) => (
                 <FadeIn key={i} delay={i * 100}>
-                  <video
-                    src={video}
-                    controls
-                    className="w-full aspect-video rounded overflow-hidden"
-                  />
+                  <div className="relative aspect-video rounded overflow-hidden bg-black group cursor-pointer" onClick={() => toggleVideoPlay(video.id)}>
+                    {!playingVideos[video.id] ? (
+                      <>
+                        <Image
+                          src={video.poster}
+                          alt={`Jet video ${i + 1} thumbnail`}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all flex items-center justify-center">
+                          <Play size={48} className="text-[#c9a55a]" fill="currentColor" />
+                        </div>
+                      </>
+                    ) : (
+                      <video
+                        src={video.src}
+                        controls
+                        autoPlay
+                        className="w-full h-full"
+                      />
+                    )}
+                  </div>
                 </FadeIn>
               ))}
             </div>

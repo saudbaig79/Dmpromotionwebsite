@@ -157,47 +157,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Boss Gallery Section - Preview */}
-      <section className="py-24 bg-[#0d0d0d]">
+      {/* The Boss Section - Restored */}
+      <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image */}
-              <FadeIn direction="left">
-                <div className="relative">
-                  <div className="relative aspect-[4/5] rounded overflow-hidden">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%282%29-fuzv2qzVWAU0MD3V2hlWLqWNNkRWdS.jpg"
-                      alt="The Boss - Duncan"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-              </FadeIn>
-
-              {/* Content */}
-              <FadeIn direction="right" delay={200}>
-                <div>
-                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
-                    {t('events.title')}
-                  </p>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                    The Boss - Gallery
-                  </h3>
-                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                    Explore an exclusive collection of moments from our most prestigious events and experiences. Featuring Duncan and his team at the pinnacle of luxury and high-end entertainment.
-                  </p>
-                  <Link
-                    href="/the-boss"
-                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-                  >
-                    {t('showcase.learnMore')}
-                  </Link>
-                </div>
-              </FadeIn>
+            <div className="text-center mb-16">
+              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
+                {t('events.title')}
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Diary of a CEO
+              </h2>
             </div>
           </FadeIn>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <FadeIn direction="left">
+              <div className="relative">
+                <div className="relative aspect-[4/3] rounded overflow-hidden">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png"
+                    alt="Duncan McHugh CEO"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={200}>
+              <div>
+                <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                  {t('showcase.diary')}
+                </p>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                  Duncan McHugh: The Maverick Maestro of Music and Media
+                </h3>
+                <p className="text-white/60 leading-relaxed mb-6 text-lg">
+                  Duncan McHugh, CEO of DM Promotions, is the visionary behind some of the most exclusive luxury events in the world. With 25 years of experience orchestrating unforgettable moments, his team has worked with A-list celebrities, premium luxury brands, and VIP clientele across the globe.
+                </p>
+                <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                  From intimate luxury gatherings to grand-scale productions, Duncan brings unparalleled expertise in media and promotion at the highest level. His passion for excellence and meticulous attention to detail ensures every event exceeds expectations. Browse our gallery to explore the extraordinary experiences we&apos;ve created.
+                </p>
+                <Link
+                  href="/the-boss"
+                  className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                >
+                  View Gallery
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

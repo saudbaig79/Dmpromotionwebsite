@@ -12,6 +12,10 @@ export default function TheBoss() {
 
   const images = [
     {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png',
+      alt: 'Duncan McHugh CEO'
+    },
+    {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%282%29-fuzv2qzVWAU0MD3V2hlWLqWNNkRWdS.jpg',
       alt: 'Duncan & Partner - Luxury Event'
     },
@@ -34,6 +38,10 @@ export default function TheBoss() {
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%284%29-Yc1WoDafl2SlksJISnhVngIwETdoHb.jpg',
       alt: 'Duncan & Partner - Formal Event'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%281%29-q8a18IPJgfqktNK90UfAe5n8lqKMDK.png',
+      alt: 'Duncan at Event with Candles'
     }
   ]
 
