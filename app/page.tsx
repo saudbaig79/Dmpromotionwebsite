@@ -13,11 +13,6 @@ export default function Home() {
 
   const services = [
     {
-      title: t('services.festivals'),
-      description: t('services.festivalsDesc'),
-      image: '/images/festival.jpg',
-    },
-    {
       title: t('services.celebrity'),
       description: t('services.celebrityDesc'),
       image: '/images/celebrity.jpg',

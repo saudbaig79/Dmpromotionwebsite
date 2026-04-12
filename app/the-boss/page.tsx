@@ -13,51 +13,63 @@ export default function TheBoss() {
   const images = [
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png',
-      alt: 'Duncan McHugh CEO'
+      alt: 'Duncan McHugh CEO',
+      objectPosition: 'center'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%282%29-fuzv2qzVWAU0MD3V2hlWLqWNNkRWdS.jpg',
-      alt: 'Duncan & Partner - Luxury Event'
+      alt: 'Duncan & Partner - Luxury Event',
+      objectPosition: 'center top'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%286%29-XPaK3JA7edxNwStwtrqWI7reP7vhhU.jpg',
-      alt: 'Duncan & Partner - Garden Event'
+      alt: 'Duncan & Partner - Garden Event',
+      objectPosition: 'center'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%283%29-N34qEK01Ch1ejVQD4d1jubFoMbGxyu.jpg',
-      alt: 'Duncan Speaking at Event'
+      alt: 'Duncan Speaking at Event',
+      objectPosition: 'center'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%281%29-IYofP1kaFiAkFY87a2HHQTr7aMyH74.jpg',
-      alt: 'Duncan in Luxury Setting'
+      alt: 'Duncan in Luxury Setting',
+      objectPosition: 'center'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%285%29-IsI86m1pm01IACyyPHG3ehkpcT9Xsn.jpg',
-      alt: 'Duncan at Waterside Venue'
+      alt: 'Duncan at Waterside Venue',
+      objectPosition: 'center'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%284%29-Yc1WoDafl2SlksJISnhVngIwETdoHb.jpg',
-      alt: 'Duncan & Partner - Formal Event'
+      alt: 'Duncan & Partner - Formal Event',
+      objectPosition: 'center top'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%281%29-q8a18IPJgfqktNK90UfAe5n8lqKMDK.png',
-      alt: 'Duncan at Event with Candles'
+      alt: 'Duncan at Event with Candles',
+      objectPosition: 'center'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Boss%20%285%29-bhTcdwzXmpUAO8JqloVM7FKeDYePjk.jpg',
-      alt: 'Luxury Dining Event with Duncan'
+      alt: 'Luxury Dining Event with Duncan',
+      objectPosition: 'center top'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Boss%20%284%29-Q4Yl1cZguLxVfXP5OPJmshvDuBriUc.jpg',
-      alt: 'Media Coverage at Luxury Event'
+      alt: 'Media Coverage at Luxury Event',
+      objectPosition: 'center top'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Boss%20%286%29-VZHU34my6RvdtbNKnYJtFopdayYD92.jpg',
-      alt: 'Formal Event with Guests'
+      alt: 'Formal Event with Guests',
+      objectPosition: 'center top'
     },
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss-UOShs0gqzWskuj43iY2C2yWJ1HHPIq.jpg',
-      alt: 'VIP Guests at Exclusive Event'
+      alt: 'VIP Guests at Exclusive Event',
+      objectPosition: 'center'
     }
   ]
 
@@ -90,7 +102,8 @@ export default function TheBoss() {
                   src={images[currentImageIndex].src}
                   alt={images[currentImageIndex].alt}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover"
+                  style={{ objectPosition: images[currentImageIndex].objectPosition }}
                   priority
                 />
               </div>
@@ -113,7 +126,8 @@ export default function TheBoss() {
                       src={image.src}
                       alt={image.alt}
                       fill
-                      className="object-cover object-center"
+                      className="object-cover"
+                      style={{ objectPosition: image.objectPosition }}
                     />
                   </button>
                 ))}
