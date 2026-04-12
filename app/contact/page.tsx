@@ -161,8 +161,9 @@ export default function ContactPage() {
                     <div className="flex items-start gap-4">
                       <Mail className="w-6 h-6 text-[#c9a55a] mt-1" />
                       <div>
-                        <p className="text-white font-medium mb-1">{t('contact.email')}</p>
-                        <p className="text-white/60">info@dmmediagroup.co</p>
+                        <p className="text-white font-medium mb-2">{t('contact.email')}</p>
+                        <p className="text-white/60 mb-2">info@dmmediagroup.co</p>
+                        <p className="text-white/60">dmpromotions@europe.com</p>
                       </div>
                     </div>
 
