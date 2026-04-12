@@ -6,19 +6,12 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
 import { useI18n } from '@/lib/i18n'
-import { Sparkles, Users, Briefcase, Rocket, Shield, Star } from 'lucide-react'
+import { Users, Briefcase, Rocket, Shield, Star } from 'lucide-react'
 
 export default function ServicesPage() {
   const { t } = useI18n()
 
   const services = [
-    {
-      icon: Sparkles,
-      title: 'Festivals',
-      description: 'Elevate your festival with our comprehensive planning and management. A comprehensive solution for a seamless celebration. Our experienced team brings creativity and precision to the table, ensuring your festival is a well-orchestrated spectacle with focus on safety, efficiency, and extraordinary execution.',
-      image: '/images/festival.jpg',
-      features: ['Event Planning', 'Artist Coordination', 'Safety Management', 'VIP Experiences'],
-    },
     {
       icon: Star,
       title: 'Celebrity Appearances',

@@ -21,9 +21,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.about': 'About Us',
-    'hero.title': 'Your partner for exclusive luxury events',
-    'hero.description': 'Whether its a festival, celebrity appearance, corporate event, brand launches or just a high end VIP event Duncan McHugh CEO and his team can bring your vision to life. With 25 years experience our team are experts in media and promotion at the highest level',
+    'hero.about': 'DM Promotions',
+    'hero.title': 'Luxury Meets Influence',
+    'hero.description': 'Your go-to for high-end media events & promotion',
     'hero.satisfaction': '100% Satisfaction Guarantee',
     'hero.commitment': 'Commitment to Customers',
     'hero.professional': 'Highly Professional Team',
@@ -36,10 +36,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.quality2': 'Quality Control System',
     
     // Services
-    'services.title': 'Our Services',
-    'services.subtitle': 'Explore some of the services available at DM Promotions, however we cater to every event so if you have something unique in mind get in touch.',
-    'services.festivals': 'Festivals',
-    'services.festivalsDesc': 'A comprehensive solution for a seamless celebration. Our experienced team brings creativity and precision to the table, ensuring your festival is a well-orchestrated spectacle. With a focus on safety, efficiency, and a flair for the extraordinary,',
+    'services.title': 'Exclusive Services',
+    'services.subtitle': 'Exclusive service by application only. VIPs, celebrities, sports men & women, and all those just living a luxury lifestyle qualify for our exclusive and elite packages.',
     'services.celebrity': 'Celebrity Appearances',
     'services.celebrityDesc': 'Elevate your event with an appearance from a well known celebrity guest. Our team have connections with numerous celebrities including Bruno Mars, Rhianna, Katy Perry, Mike Tyson to name a few. For a full list of celebrities available enquire today.',
     'services.corporate': 'Corporate Events',
@@ -55,17 +53,25 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.contact': 'Contact Us',
     
     // Events Section
-    'events.title': 'OUR EVENTS',
-    'events.subtitle': 'Upcoming Events & Media Launches',
-    'events.cta': "Don't Hesitate to Use Our Services. Your Event Will Be Special.",
+    'events.title': 'THE BOSS',
+    'events.subtitle': 'Gallery',
+    'events.cta': 'Experience the Pinnacle of Luxury',
     
     // Showcase Section
-    'showcase.title': 'SHOWCASE',
-    'showcase.subtitle': 'Recent Events',
-    'showcase.diary': 'Diary of a CEO',
-    'showcase.duncanTitle': 'Duncan McHugh: The Maverick Maestro of Music and Media',
-    'showcase.duncanDesc': 'Duncan McHugh CEO of DM Promotions has a team around him with 25 years experience in media and promotion at the highest level, dealing with the limelight and front page stories. Some of our trusted clients include Rolex, Ferrari and Bentley alongside A list celebrities such as Neil Diamond, Rhianna and Rita Ora.',
+    'showcase.title': 'LUXURY LIFESTYLE',
+    'showcase.subtitle': 'Exclusive Access',
+    'showcase.diary': 'Premium Experiences',
+    'showcase.duncanTitle': 'Malex Super Yacht Charter',
+    'showcase.duncanDesc': 'Experience the pinnacle of nautical luxury aboard our magnificent Malex super yacht. Designed for those with refined taste and discerning standards, this exclusive vessel offers unparalleled elegance, world-class service, and unforgettable Mediterranean adventures.',
     'showcase.learnMore': 'Learn More',
+    
+    // Luxury Assets
+    'luxury.yacht': 'Malex Super Yacht',
+    'luxury.yachtDesc': 'Experience the pinnacle of nautical luxury aboard our magnificent Malex super yacht. Designed for those with refined taste and discerning standards, this exclusive vessel offers unparalleled elegance, world-class service, and unforgettable Mediterranean adventures.',
+    'luxury.jet': 'Private Jet Charter',
+    'luxury.jetDesc': 'Travel in ultimate comfort and style with our private jet charter service. Enjoy exclusive access to premium aircraft, personalized service, and the freedom to travel on your own schedule. Perfect for VIPs and those accustomed to the finest things in life.',
+    'luxury.helicopter': 'Helicopter Tours & Transfers',
+    'luxury.helicopterDesc': 'Rise above the ordinary with our helicopter charter service. Experience breathtaking aerial views, convenient transfers to exclusive destinations, and an unforgettable perspective on luxury travel.',
     
     // Blog Section
     'blog.title': 'OUR BLOG',
@@ -143,9 +149,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Contacto',
     
     // Hero Section
-    'hero.about': 'Sobre nosotros',
-    'hero.title': 'Tu socio para eventos exclusivos de lujo',
-    'hero.description': 'Ya sea un festival, una aparición de celebridades, un evento corporativo, lanzamientos de marcas o simplemente un evento VIP de alto nivel, el CEO de Duncan McHugh y su equipo pueden hacer realidad su visión. Con 25 años de experiencia nuestro equipo son expertos en medios y promoción al más alto nivel.',
+    'hero.about': 'DM Promotions',
+    'hero.title': 'Lujo Meets Influencia',
+    'hero.description': 'Tu destino para eventos multimedia de alto nivel y promoción',
     'hero.satisfaction': 'Garantía de satisfacción del 100%',
     'hero.commitment': 'Compromiso con los clientes',
     'hero.professional': 'Equipo altamente profesional',
@@ -158,8 +164,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.quality2': 'Sistema de control de calidad',
     
     // Services
-    'services.title': 'Servicios',
-    'services.subtitle': 'Explore algunos de los servicios disponibles en DM Promotions; sin embargo, nos adaptamos a cada evento, así que si tiene algo único en mente, contáctenos.',
+    'services.title': 'Servicios Exclusivos',
+    'services.subtitle': 'Servicio exclusivo solo por solicitud. VIPs, celebridades, deportistas y todos aquellos que viven un estilo de vida de lujo califican para nuestros paquetes exclusivos y de élite.',
     'services.festivals': 'Festivales',
     'services.festivalsDesc': 'Una solución integral para una celebración perfecta. Nuestro experimentado equipo aporta creatividad y precisión, garantizando que su festival sea un espectáculo bien orquestado. Con un enfoque en la seguridad, la eficiencia y un don para lo extraordinario,',
     'services.celebrity': 'Apariciones de celebridades',
@@ -177,17 +183,25 @@ const translations: Record<Language, Record<string, string>> = {
     'cta.contact': 'Contáctenos',
     
     // Events Section
-    'events.title': 'NUESTROS EVENTOS',
-    'events.subtitle': 'Próximos eventos y lanzamientos de medios',
-    'events.cta': 'No dudes en utilizar nuestros servicios. Tu evento será especial.',
+    'events.title': 'EL JEFE',
+    'events.subtitle': 'Galería',
+    'events.cta': 'Experimenta el Pináculo del Lujo',
     
     // Showcase Section
-    'showcase.title': 'ESCAPARATE',
-    'showcase.subtitle': 'Eventos recientes',
-    'showcase.diary': 'Diario de un CEO',
-    'showcase.duncanTitle': 'Duncan McHugh: El maestro inconformista de la música y los medios',
-    'showcase.duncanDesc': 'Duncan McHugh, CEO de DM Promotions, tiene un equipo a su alrededor con 25 años de experiencia en medios y promoción al más alto nivel.',
+    'showcase.title': 'ESTILO DE VIDA DE LUJO',
+    'showcase.subtitle': 'Acceso Exclusivo',
+    'showcase.diary': 'Experiencias Premium',
+    'showcase.duncanTitle': 'Alquiler de Yate Malex Super',
+    'showcase.duncanDesc': 'Experimenta el pináculo del lujo náutico a bordo de nuestro magnífico yate super Malex. Diseñado para quienes tienen gusto refinado y estándares exigentes, este buque exclusivo ofrece elegancia incomparable, servicio de clase mundial y aventuras mediterráneas inolvidables.',
     'showcase.learnMore': 'Más información',
+    
+    // Luxury Assets - Spanish
+    'luxury.yacht': 'Alquiler de Yate Malex',
+    'luxury.yachtDesc': 'Experimenta el pináculo del lujo náutico a bordo de nuestro magnífico yate. Diseñado para quienes tienen gusto refinado, este buque exclusivo ofrece elegancia incomparable y aventuras inolvidables.',
+    'luxury.jet': 'Alquiler de Jet Privado',
+    'luxury.jetDesc': 'Viaja con comodidad y estilo en nuestro servicio de alquiler de jets privados. Acceso exclusivo a aeronaves premium, servicio personalizado y libertad de viajar según tu horario.',
+    'luxury.helicopter': 'Tours y Traslados en Helicóptero',
+    'luxury.helicopterDesc': 'Elévate sobre lo ordinario con nuestro servicio de alquiler de helicópteros. Experiencias aéreas espectaculares, traslados convenientes y perspectivas inolvidables del lujo.',
     
     // Blog Section
     'blog.title': 'NUESTRO BLOG',

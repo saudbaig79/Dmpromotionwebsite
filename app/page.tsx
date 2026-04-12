@@ -13,11 +13,6 @@ export default function Home() {
 
   const services = [
     {
-      title: t('services.festivals'),
-      description: t('services.festivalsDesc'),
-      image: '/images/festival.jpg',
-    },
-    {
       title: t('services.celebrity'),
       description: t('services.celebrityDesc'),
       image: '/images/celebrity.jpg',
@@ -65,19 +60,19 @@ export default function Home() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
           <FadeIn delay={100}>
-            <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-6">
-              {t('hero.about')}
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-8 text-balance">
-              {t('hero.title')}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight mb-4">
+              DM Promotions
             </h1>
           </FadeIn>
 
+          <FadeIn delay={200}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#c9a55a] leading-tight mb-8">
+              Where Luxury Meets Influence
+            </h2>
+          </FadeIn>
+
           <FadeIn delay={300}>
-            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed">
               {t('hero.description')}
             </p>
           </FadeIn>
@@ -102,10 +97,10 @@ export default function Home() {
 
           <FadeIn delay={500}>
             <Link
-              href="/about"
+              href="/contact"
               className="inline-block px-10 py-4 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
             >
-              {t('hero.aboutBtn')}
+              {t('cta.contact')}
             </Link>
           </FadeIn>
         </div>
@@ -115,7 +110,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Exclusive Services Section */}
       <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -157,6 +152,193 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Boss Section - Restored */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
+                {t('events.title')}
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Diary of a CEO
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <FadeIn direction="left">
+              <div className="relative">
+                <div className="relative aspect-[4/3] rounded overflow-hidden">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png"
+                    alt="Duncan McHugh CEO"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="right" delay={200}>
+              <div>
+                <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                  {t('showcase.diary')}
+                </p>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                  Duncan McHugh: The Maverick Maestro of Music and Media
+                </h3>
+                <p className="text-white/60 leading-relaxed mb-6 text-lg">
+                  Duncan McHugh, CEO of DM Promotions, has a team around him with 25 years of experience in media and promotion at the highest level, dealing with the limelight and front page stories. Trusted partners include Rolex, Ferrari, and Bentley, alongside A-list celebrities such as Neil Diamond, Rihanna, and Rita Ora.
+                </p>
+                <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                  From intimate luxury gatherings to grand-scale productions, Duncan brings unparalleled expertise in orchestrating unforgettable moments. His passion for excellence and meticulous attention to detail ensures every event exceeds expectations. Browse our gallery to explore the extraordinary experiences we&apos;ve created.
+                </p>
+                <Link
+                  href="/the-boss"
+                  className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                >
+                  View Gallery
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Yacht Section - Preview */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <FadeIn direction="left">
+                <div>
+                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                    {t('luxury.yacht')}
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                    Malex Super Yacht
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                    {t('luxury.yachtDesc')}
+                  </p>
+                  <Link
+                    href="/yacht"
+                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('showcase.learnMore')}
+                  </Link>
+                </div>
+              </FadeIn>
+
+              {/* Image */}
+              <FadeIn direction="right" delay={200}>
+                <div className="relative">
+                  <div className="relative aspect-video rounded overflow-hidden">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yacht%20%282%29-glX03Agx4DKyWLAHsTCCkmVsiZqQBz.jpg"
+                      alt="Malex Super Yacht"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Jet & Helicopter Section - Preview */}
+      <section className="py-24 bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image */}
+              <FadeIn direction="left">
+                <div className="relative">
+                  <div className="relative aspect-video rounded overflow-hidden">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29.webp-sKVR9GJKvs2Oa8m7NyIIchNCCa2fr8.jpeg"
+                      alt="Private Jet & Helicopter"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </FadeIn>
+
+              {/* Content */}
+              <FadeIn direction="right" delay={200}>
+                <div>
+                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                    Luxury Air Travel
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                    Private Jet & Helicopter
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                    Experience exclusive air travel with our premium private jet and helicopter charter services. Designed for those who demand the finest in luxury transportation and unforgettable journeys.
+                  </p>
+                  <Link
+                    href="/air-travel"
+                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('showcase.learnMore')}
+                  </Link>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Sierra Nevada Section - Preview */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <FadeIn direction="left">
+                <div>
+                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                    Alpine Luxury
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                    Sierra Nevada
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                    Experience Europe's premier alpine destination. Discover breathtaking mountain vistas, world-class skiing, and exclusive luxury accommodations in the heart of Sierra Nevada. A destination for those seeking the finest mountain experiences.
+                  </p>
+                  <Link
+                    href="/sierra-nevada"
+                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('showcase.learnMore')}
+                  </Link>
+                </div>
+              </FadeIn>
+
+              {/* Image */}
+              <FadeIn direction="right" delay={200}>
+                <div className="relative">
+                  <div className="relative aspect-video rounded overflow-hidden">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/main%20Picture%20for%20sierra%20nevada%20display-AfwShJD1JTNOdTpZElOTyojAKWwYbp.jpg"
+                      alt="Sierra Nevada Mountains"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#c9a55a]/10 via-[#c9a55a]/5 to-[#c9a55a]/10" />
@@ -175,190 +357,6 @@ export default function Home() {
             >
               {t('cta.contact')}
             </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Events Section */}
-      <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
-                {t('events.title')}
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
-                {t('events.subtitle')}
-              </h2>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 sm:p-12 lg:p-16 text-center">
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-6">
-                {t('events.cta')}
-              </h3>
-              <p className="text-white/60 mb-8 text-lg">
-                {t('cta.subtitle')}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-              >
-                {t('cta.contact')}
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Showcase Section */}
-      <section className="py-24 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
-                {t('showcase.title')}
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
-                {t('showcase.subtitle')}
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <FadeIn direction="left">
-              <div className="relative aspect-[4/3] rounded overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png"
-                  alt="Duncan McHugh CEO"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="right" delay={200}>
-              <div>
-                <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
-                  {t('showcase.diary')}
-                </p>
-                <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
-                  {t('showcase.duncanTitle')}
-                </h3>
-                <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                  {t('showcase.duncanDesc')}
-                </p>
-                <Link
-                  href="/about"
-                  className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-                >
-                  {t('showcase.learnMore')}
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
-                {t('blog.title')}
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
-                {t('blog.subtitle')}
-              </h2>
-            </div>
-          </FadeIn>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <FadeIn delay={100} direction="up">
-              <Link href="/blog/ski-review" className="group block">
-                <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
-                  <div className="aspect-video relative overflow-hidden">
-                    <Image
-                      src="/sierra-nevada.jpg"
-                      alt="Ski Review"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
-                      Ski Review
-                    </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      Sierra Nevada with Debbie Wingham - Europe&apos;s premier alpine destination
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={200} direction="up">
-              <Link href="/blog/ceo-review" className="group block">
-                <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
-                  <div className="aspect-video relative overflow-hidden">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-8QCVDEn8SlteD8gZIq8KHZrTVIGjUz.png"
-                      alt="CEO Review"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-serif font-bold text-white mb-3 group-hover:text-[#c9a55a] transition-colors">
-                      CEO Review
-                    </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      Duncan McHugh on creating unforgettable luxury experiences worldwide
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </FadeIn>
-          </div>
-
-          {/* Sponsorship CTA */}
-          <FadeIn delay={300}>
-            <div className="relative rounded overflow-hidden">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/ski.jpg"
-                  alt="Sierra Nevada"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/60" />
-              </div>
-              <div className="relative z-10 p-8 sm:p-12 lg:p-16 text-center">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
-                  {t('blog.sponsorship')}
-                </h3>
-                <p className="text-[#c9a55a] text-lg mb-8 font-medium">
-                  {t('blog.vip')}
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="px-8 py-3 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
-                  >
-                    {t('nav.contact')}
-                  </Link>
-                  <Link
-                    href="/blog"
-                    className="px-8 py-3 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-                  >
-                    {t('showcase.learnMore')}
-                  </Link>
-                </div>
-              </div>
-            </div>
           </FadeIn>
         </div>
       </section>
