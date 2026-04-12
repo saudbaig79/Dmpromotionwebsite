@@ -66,30 +66,39 @@ export default function AirTravel() {
         </div>
       </section>
 
-      {/* Private Jet Section */}
+      {/* Private Jet & Helicopter Section */}
       <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-white mb-12">Private Jet Charter</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-white mb-4">Premium Air Charter Experience</h2>
+              <p className="text-white/60 max-w-2xl mx-auto text-lg">
+                Whether by private jet or helicopter, experience uncompromising luxury in every flight
+              </p>
+            </div>
           </FadeIn>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {jetImages.map((image, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="relative aspect-video rounded overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={`Jet image ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          {/* All Images Grid */}
+          <FadeIn>
+            <h3 className="text-2xl font-bold text-white mb-8">Our Fleet</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              {[...jetImages, ...helicopterImages].map((image, i) => (
+                <FadeIn key={i} delay={i * 50}>
+                  <div className="relative aspect-video rounded overflow-hidden hover:shadow-lg transition-shadow">
+                    <Image
+                      src={image}
+                      alt={`Luxury air transport ${i + 1}`}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </FadeIn>
 
           <FadeIn delay={200}>
-            <h3 className="text-2xl font-bold text-white mb-6">Experience in Motion</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">Experience in Motion</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {jetVideos.map((video, i) => (
                 <FadeIn key={i} delay={i * 100}>
@@ -98,7 +107,7 @@ export default function AirTravel() {
                       <>
                         <Image
                           src={video.poster}
-                          alt={`Jet video ${i + 1} thumbnail`}
+                          alt={`Air charter video ${i + 1} thumbnail`}
                           fill
                           className="object-cover"
                         />
@@ -122,46 +131,22 @@ export default function AirTravel() {
         </div>
       </section>
 
-      {/* Helicopter Section */}
-      <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-white mb-12">Helicopter Tours & Transfers</h2>
-          </FadeIn>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {helicopterImages.map((image, i) => (
-              <FadeIn key={i} delay={i * 100}>
-                <div className="relative aspect-video rounded overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={`Helicopter image ${i + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Description */}
-      <section className="py-24 bg-[#111111]">
+      <section className="py-24 bg-[#0d0d0d]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="bg-[#0d0d0d] rounded p-8 sm:p-12">
+            <div className="bg-[#111111] rounded p-8 sm:p-12">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Sky-High Luxury
               </h2>
               <p className="text-white/70 leading-relaxed text-lg mb-6">
-                Travel in ultimate comfort and style with our private jet charter service. Enjoy exclusive access to premium aircraft, personalized service, and the freedom to travel on your own schedule. Perfect for VIPs and those accustomed to the finest things in life.
+                Experience the pinnacle of air travel with our exclusive private jet and helicopter charter services. Designed for the discerning traveler who demands uncompromising excellence, our premium aircraft fleet offers the ultimate in comfort, privacy, and sophistication.
               </p>
               <p className="text-white/70 leading-relaxed text-lg mb-6">
-                Rise above the ordinary with our helicopter charter service. Experience breathtaking aerial views, convenient transfers to exclusive destinations, and an unforgettable perspective on luxury travel.
+                Travel on your own schedule with personalized service, dedicated crew attention, and access to exclusive destinations. Whether you&apos;re seeking swift transport to your next engagement or an extraordinary aerial perspective on luxury travel, our air charter solutions deliver world-class service at every altitude.
               </p>
               <p className="text-white/70 leading-relaxed text-lg">
-                Whether you need swift transport to your next engagement or seek an extraordinary aerial experience, our air travel solutions deliver uncompromising excellence and sophistication at every altitude.
+                From intimate transfers to VIP engagements to breathtaking aerial tours, our experienced team ensures every moment of your journey reflects the DM Promotions standard of excellence and attention to detail.
               </p>
             </div>
           </FadeIn>

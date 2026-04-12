@@ -195,10 +195,10 @@ export default function Home() {
                   Duncan McHugh: The Maverick Maestro of Music and Media
                 </h3>
                 <p className="text-white/60 leading-relaxed mb-6 text-lg">
-                  Duncan McHugh, CEO of DM Promotions, is the visionary behind some of the most exclusive luxury events in the world. With 25 years of experience orchestrating unforgettable moments, his team has worked with A-list celebrities, premium luxury brands, and VIP clientele across the globe.
+                  Duncan McHugh, CEO of DM Promotions, has a team around him with 25 years of experience in media and promotion at the highest level, dealing with the limelight and front page stories. Trusted partners include Rolex, Ferrari, and Bentley, alongside A-list celebrities such as Neil Diamond, Rihanna, and Rita Ora.
                 </p>
                 <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                  From intimate luxury gatherings to grand-scale productions, Duncan brings unparalleled expertise in media and promotion at the highest level. His passion for excellence and meticulous attention to detail ensures every event exceeds expectations. Browse our gallery to explore the extraordinary experiences we&apos;ve created.
+                  From intimate luxury gatherings to grand-scale productions, Duncan brings unparalleled expertise in orchestrating unforgettable moments. His passion for excellence and meticulous attention to detail ensures every event exceeds expectations. Browse our gallery to explore the extraordinary experiences we&apos;ve created.
                 </p>
                 <Link
                   href="/the-boss"

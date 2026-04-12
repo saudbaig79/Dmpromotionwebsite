@@ -42,6 +42,22 @@ export default function TheBoss() {
     {
       src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%281%29-q8a18IPJgfqktNK90UfAe5n8lqKMDK.png',
       alt: 'Duncan at Event with Candles'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Boss%20%285%29-bhTcdwzXmpUAO8JqloVM7FKeDYePjk.jpg',
+      alt: 'Luxury Dining Event with Duncan'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Boss%20%284%29-Q4Yl1cZguLxVfXP5OPJmshvDuBriUc.jpg',
+      alt: 'Media Coverage at Luxury Event'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Boss%20%286%29-VZHU34my6RvdtbNKnYJtFopdayYD92.jpg',
+      alt: 'Formal Event with Guests'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss-UOShs0gqzWskuj43iY2C2yWJ1HHPIq.jpg',
+      alt: 'VIP Guests at Exclusive Event'
     }
   ]
 
