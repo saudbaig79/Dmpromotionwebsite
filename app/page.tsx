@@ -6,10 +6,48 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
 import { useI18n } from '@/lib/i18n'
-import { Check, Users, Award, Shield, ChevronDown } from 'lucide-react'
+import { Check, Users, Award, Shield, ChevronDown, Play } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Home() {
   const { t } = useI18n()
+  const [currentBossImageIndex, setCurrentBossImageIndex] = useState(0)
+  const [activeTab, setActiveTab] = useState<'boss' | 'yacht' | 'jet'>('boss')
+
+  const bossImages = [
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%282%29-fuzv2qzVWAU0MD3V2hlWLqWNNkRWdS.jpg',
+      alt: 'Duncan & Partner - Luxury Event'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%286%29-XPaK3JA7edxNwStwtrqWI7reP7vhhU.jpg',
+      alt: 'Duncan & Partner - Garden Event'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%283%29-N34qEK01Ch1ejVQD4d1jubFoMbGxyu.jpg',
+      alt: 'Duncan Speaking at Event'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%281%29-IYofP1kaFiAkFY87a2HHQTr7aMyH74.jpg',
+      alt: 'Duncan in Luxury Setting'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%285%29-IsI86m1pm01IACyyPHG3ehkpcT9Xsn.jpg',
+      alt: 'Duncan at Waterside Venue'
+    },
+    {
+      src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/boss%20%284%29-Yc1WoDafl2SlksJISnhVngIwETdoHb.jpg',
+      alt: 'Duncan & Partner - Formal Event'
+    }
+  ]
+
+  const nextBossImage = () => {
+    setCurrentBossImageIndex((prev) => (prev + 1) % bossImages.length)
+  }
+
+  const prevBossImage = () => {
+    setCurrentBossImageIndex((prev) => (prev - 1 + bossImages.length) % bossImages.length)
+  }
 
   const services = [
     {
@@ -65,19 +103,19 @@ export default function Home() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
           <FadeIn delay={100}>
-            <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-6">
+            <h2 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold text-[#c9a55a] leading-tight mb-6 text-balance">
               {t('hero.about')}
-            </p>
+            </h2>
           </FadeIn>
 
           <FadeIn delay={200}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-8 text-balance">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight mb-4 text-balance">
               {t('hero.title')}
             </h1>
           </FadeIn>
 
           <FadeIn delay={300}>
-            <p className="text-lg sm:text-xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed">
               {t('hero.description')}
             </p>
           </FadeIn>
@@ -102,10 +140,10 @@ export default function Home() {
 
           <FadeIn delay={500}>
             <Link
-              href="/about"
+              href="/contact"
               className="inline-block px-10 py-4 bg-[#c9a55a] text-black font-semibold rounded hover:bg-[#d4b76a] transition-all duration-300 uppercase tracking-wider text-sm"
             >
-              {t('hero.aboutBtn')}
+              {t('cta.contact')}
             </Link>
           </FadeIn>
         </div>
@@ -115,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Exclusive Services Section */}
       <section className="py-24 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -157,6 +195,243 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The Boss Gallery Section */}
+      <section className="py-24 bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
+                {t('events.title')}
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
+                {t('events.subtitle')}
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <div className="relative">
+                <div className="relative aspect-[4/5] rounded overflow-hidden">
+                  <Image
+                    src={bossImages[currentBossImageIndex].src}
+                    alt={bossImages[currentBossImageIndex].alt}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                </div>
+                
+                {/* Navigation Buttons */}
+                <button
+                  onClick={prevBossImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#c9a55a]/80 hover:bg-[#c9a55a] text-black flex items-center justify-center transition-all"
+                  aria-label="Previous image"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextBossImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#c9a55a]/80 hover:bg-[#c9a55a] text-black flex items-center justify-center transition-all"
+                  aria-label="Next image"
+                >
+                  →
+                </button>
+
+                {/* Indicator Dots */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {bossImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentBossImageIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentBossImageIndex ? 'bg-[#c9a55a] w-8' : 'bg-white/50'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Thumbnail Gallery */}
+            <FadeIn delay={200}>
+              <div className="mt-8 grid grid-cols-3 sm:grid-cols-6 gap-2">
+                {bossImages.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentBossImageIndex(index)}
+                    className={`relative aspect-square rounded overflow-hidden border-2 transition-all ${
+                      index === currentBossImageIndex
+                        ? 'border-[#c9a55a]'
+                        : 'border-white/20 hover:border-white/50'
+                    }`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Luxury Assets Section - Yacht */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Yacht Content */}
+              <FadeIn direction="left">
+                <div>
+                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                    {t('luxury.yacht')}
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
+                    Malex Super Yacht
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                    {t('luxury.yachtDesc')}
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('showcase.learnMore')}
+                  </Link>
+                </div>
+              </FadeIn>
+
+              {/* Yacht Media */}
+              <FadeIn direction="right" delay={200}>
+                <div className="relative">
+                  <div className="aspect-video rounded overflow-hidden relative">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yacht%20%281%29-Rg7hexYJu02BGGZJm68C4L0tGQ5NHt.jpg"
+                      alt="Malex Super Yacht"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                  <div className="mt-4 flex gap-3">
+                    <video
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yacht%20%282%29-Qml30qtOy7cc6fLOv3kNeqowkSLA6C.mp4"
+                      poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yacht%20%281%29-Rg7hexYJu02BGGZJm68C4L0tGQ5NHt.jpg"
+                      className="w-full h-24 object-cover rounded"
+                      controls
+                    />
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Luxury Assets Section - Jet */}
+      <section className="py-24 bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Jet Media */}
+              <FadeIn direction="left">
+                <div className="relative">
+                  <div className="aspect-video rounded overflow-hidden relative">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29.webp-sKVR9GJKvs2Oa8m7NyIIchNCCa2fr8.jpeg"
+                      alt="Private Jet"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                  <div className="mt-4">
+                    <video
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29-8zZtvJ8FaHO4GCLJ7M2L3mBKE4zQZ2.mp4"
+                      poster="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29.webp-sKVR9GJKvs2Oa8m7NyIIchNCCa2fr8.jpeg"
+                      className="w-full h-24 object-cover rounded"
+                      controls
+                    />
+                  </div>
+                </div>
+              </FadeIn>
+
+              {/* Jet Content */}
+              <FadeIn direction="right" delay={200}>
+                <div>
+                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                    {t('luxury.jet')}
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
+                    Private Jet Charter
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                    {t('luxury.jetDesc')}
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('showcase.learnMore')}
+                  </Link>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Luxury Assets Section - Helicopter */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Helicopter Content */}
+              <FadeIn direction="left">
+                <div>
+                  <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
+                    {t('luxury.helicopter')}
+                  </p>
+                  <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
+                    Helicopter Tours & Transfers
+                  </h3>
+                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                    {t('luxury.helicopterDesc')}
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
+                  >
+                    {t('showcase.learnMore')}
+                  </Link>
+                </div>
+              </FadeIn>
+
+              {/* Helicopter Media */}
+              <FadeIn direction="right" delay={200}>
+                <div className="relative">
+                  <div className="aspect-video rounded overflow-hidden relative">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Jet%20%281%29-Ek0Di6FoFMUhd6k8PBeYcvZbRx6V76.jpg"
+                      alt="Private Jet"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#c9a55a]/10 via-[#c9a55a]/5 to-[#c9a55a]/10" />
@@ -179,89 +454,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="py-24 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
-                {t('events.title')}
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
-                {t('events.subtitle')}
-              </h2>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <div className="bg-[#1a1a1a] border border-white/10 rounded p-8 sm:p-12 lg:p-16 text-center">
-              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-6">
-                {t('events.cta')}
-              </h3>
-              <p className="text-white/60 mb-8 text-lg">
-                {t('cta.subtitle')}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-              >
-                {t('cta.contact')}
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Showcase Section */}
-      <section className="py-24 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <p className="text-[#c9a55a] uppercase tracking-[0.3em] text-sm font-medium mb-4">
-                {t('showcase.title')}
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white">
-                {t('showcase.subtitle')}
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <FadeIn direction="left">
-              <div className="relative aspect-[4/3] rounded overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Duncan%20CEO-VrP89pCMuv5Jpe6pCTVsqxMAoDfoWV.png"
-                  alt="Duncan McHugh CEO"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="right" delay={200}>
-              <div>
-                <p className="text-[#c9a55a] uppercase tracking-[0.2em] text-sm font-medium mb-4">
-                  {t('showcase.diary')}
-                </p>
-                <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
-                  {t('showcase.duncanTitle')}
-                </h3>
-                <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                  {t('showcase.duncanDesc')}
-                </p>
-                <Link
-                  href="/about"
-                  className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
-                >
-                  {t('showcase.learnMore')}
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* Blog Section */}
       <section className="py-24 bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -276,7 +468,7 @@ export default function Home() {
             </div>
           </FadeIn>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             <FadeIn delay={100} direction="up">
               <Link href="/blog/ski-review" className="group block">
                 <div className="bg-[#1a1a1a] border border-white/10 rounded overflow-hidden hover:border-[#c9a55a]/50 transition-all duration-500">
