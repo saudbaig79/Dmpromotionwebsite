@@ -17,30 +17,35 @@ export default function ContactPage() {
     company: '',
     message: '',
   })
-  const [submitStatus, setSubmitStatus] = useState('')
+  const [showMessage, setShowMessage] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          to: 'dmpromotions@europe.com'
-        }),
-      })
+    
+    const { firstName, lastName, email, company, message } = formData
+    
+    // Create the email body with form data
+    const emailBody = `
+Name: ${firstName} ${lastName}
+Email: ${email}
+Company: ${company}
 
-      if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' })
-        setTimeout(() => setSubmitStatus(''), 3000)
-      } else {
-        setSubmitStatus('error')
-      }
-    } catch (error) {
-      setSubmitStatus('error')
-    }
+Message:
+${message}
+    `.trim()
+    
+    const subject = `New Contact Form Submission from ${firstName} ${lastName}`
+    
+    // Create mailto link
+    const mailtoLink = `mailto:dmpromotions@europe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`
+    
+    // Open mailto link
+    window.location.href = mailtoLink
+    
+    // Show success message
+    setShowMessage(true)
+    setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' })
+    setTimeout(() => setShowMessage(false), 3000)
   }
 
   return (
@@ -127,15 +132,9 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  {submitStatus === 'success' && (
+                  {showMessage && (
                     <div className="p-4 bg-green-500/20 border border-green-500/50 rounded text-green-400 text-sm">
-                      Message sent successfully! We&apos;ll get back to you soon.
-                    </div>
-                  )}
-
-                  {submitStatus === 'error' && (
-                    <div className="p-4 bg-red-500/20 border border-red-500/50 rounded text-red-400 text-sm">
-                      Error sending message. Please try again.
+                      Opening Gmail with your message. Please complete the send in your email client.
                     </div>
                   )}
 
