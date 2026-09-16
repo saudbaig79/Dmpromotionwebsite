@@ -46,7 +46,7 @@ export function ShakiraVipSection() {
           <div>
             <FadeIn delay={150}>
               <h2 className="font-serif font-bold leading-[0.9] tracking-tight mb-4">
-                <span className="block text-6xl sm:text-7xl lg:text-8xl bg-gradient-to-b from-[#f2dfa8] via-[#c9a55a] to-[#8a6f34] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(201,165,90,0.35)]">
+                <span className="block text-center text-6xl sm:text-7xl lg:text-8xl bg-gradient-to-b from-[#f2dfa8] via-[#c9a55a] to-[#8a6f34] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(201,165,90,0.35)]">
                   SHAKIRA
                 </span>
                 <span className="flex items-center gap-3 mt-4">
