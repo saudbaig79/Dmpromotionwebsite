@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
+import { ShakiraVipSection } from '@/components/shakira-vip-section'
 import { useI18n } from '@/lib/i18n'
 import { Check, Users, Award, Shield, ChevronDown } from 'lucide-react'
 
@@ -109,6 +110,9 @@ export default function Home() {
           <ChevronDown size={32} className="text-[#c9a55a]" />
         </div>
       </section>
+
+      {/* Shakira Madrid - Featured VIP Experience */}
+      <ShakiraVipSection />
 
       {/* Exclusive Services Section */}
       <section className="py-24 bg-[#111111]">
