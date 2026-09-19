@@ -37,6 +37,14 @@ export function ShakiraVipSection() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-12deg] rounded-md border-4 border-[#f2dfa8] bg-[#8f1d2c]/90 px-6 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.45)] sm:px-10 sm:py-4"
+                  aria-label="Sold out"
+                >
+                  <span className="block border-2 border-[#f2dfa8]/70 px-4 py-1 text-center font-sans text-2xl font-black uppercase tracking-[0.22em] text-[#f2dfa8] sm:text-4xl">
+                    SOLD OUT
+                  </span>
+                </div>
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-lg" />
               </div>
             </div>
