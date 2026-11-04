@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
-import { ShakiraVipSection } from '@/components/shakira-vip-section'
+import { FerrariFeaturedExperience } from '@/components/ferrari-featured-experience'
 import { useI18n } from '@/lib/i18n'
 import { Check, Users, Award, Shield, ChevronDown } from 'lucide-react'
 
@@ -111,8 +111,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Shakira Madrid - Featured VIP Experience */}
-      <ShakiraVipSection />
+      {/* Ferrari Finali Mondiali 2026 - Featured Experience */}
+      <FerrariFeaturedExperience />
 
       {/* Exclusive Services Section */}
       <section className="py-24 bg-[#111111]">
