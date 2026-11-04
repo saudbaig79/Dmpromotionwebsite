@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { I18nProvider } from '@/lib/i18n'
@@ -10,8 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'DM Media Group | Luxury Events & Celebrity Appearances',
-  description: 'Your partner for exclusive luxury events, celebrity appearances, and corporate entertainment. 25 years of experience in premium event management.',
+  title: 'DM Promotions | Ferrari Finali Mondiali 2026',
+  description:
+    'Experience the Ferrari Finali Mondiali 2026 in Barcelona with exclusive DM Promotions packages, including Casa Ferrari weekend tickets, full-weekend hospitality, hotel stays and vehicle transport.',
   icons: {
     icon: [
       {
@@ -29,6 +30,10 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0d0d0d',
 }
 
 export default function RootLayout({
