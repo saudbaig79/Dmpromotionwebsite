@@ -6,6 +6,7 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { FadeIn } from '@/components/fade-in'
 import { FerrariFeaturedExperience } from '@/components/ferrari-featured-experience'
+import { ShakiraVipSection } from '@/components/shakira-vip-section'
 import { useI18n } from '@/lib/i18n'
 import { Check, Users, Award, Shield, ChevronDown } from 'lucide-react'
 
@@ -113,6 +114,9 @@ export default function Home() {
 
       {/* Ferrari Finali Mondiali 2026 - Featured Experience */}
       <FerrariFeaturedExperience />
+
+      {/* Previous Experiences */}
+      <ShakiraVipSection />
 
       {/* Exclusive Services Section */}
       <section className="py-24 bg-[#111111]">
