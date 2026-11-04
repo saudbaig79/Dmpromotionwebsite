@@ -18,7 +18,7 @@ export function ShakiraVipSection() {
           <div className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#c9a55a]/40 bg-[#c9a55a]/10 text-[#c9a55a] text-xs font-medium uppercase tracking-[0.3em]">
               <Sparkles size={14} />
-              Featured Experience
+              Previous Experiences
             </span>
           </div>
         </FadeIn>
