@@ -229,9 +229,16 @@ export default function Home() {
                   <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                     Malex Super Yacht
                   </h3>
-                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
+                  <p className="text-white/60 leading-relaxed mb-6 text-lg">
                     {t('luxury.yachtDesc')}
                   </p>
+                  <ul className="mb-8 flex flex-wrap gap-2" aria-label="Yacht experience highlights">
+                    {['Mediterranean days', 'Private crew & chef', 'Water sports', 'Hidden coves'].map((highlight) => (
+                      <li key={highlight} className="rounded-full border border-[#c9a55a]/30 bg-[#c9a55a]/5 px-3 py-1.5 text-xs sm:text-sm text-white/70">
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
                   <Link
                     href="/yacht"
                     className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
@@ -287,9 +294,16 @@ export default function Home() {
                   <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                     Private Jet & Helicopter
                   </h3>
-                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                    Experience exclusive air travel with our premium private jet and helicopter charter services. Designed for those who demand the finest in luxury transportation and unforgettable journeys.
+                  <p className="text-white/60 leading-relaxed mb-6 text-lg">
+                    Private jet charters and scenic helicopter transfers, arranged around your schedule. Connect Mediterranean yacht days with Sierra Nevada in one carefully coordinated itinerary.
                   </p>
+                  <ul className="mb-8 flex flex-wrap gap-2" aria-label="Air travel experience highlights">
+                    {['Private jet charter', 'Helicopter transfer', 'Yacht-to-slopes connection', 'Marbella to Sierra in 1 hour'].map((highlight) => (
+                      <li key={highlight} className="rounded-full border border-[#c9a55a]/30 bg-[#c9a55a]/5 px-3 py-1.5 text-xs sm:text-sm text-white/70">
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
                   <Link
                     href="/air-travel"
                     className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
@@ -317,9 +331,16 @@ export default function Home() {
                   <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                     Sierra Nevada
                   </h3>
-                  <p className="text-white/60 leading-relaxed mb-8 text-lg">
-                    Experience Europe's premier alpine destination. Discover breathtaking mountain vistas, world-class skiing, and exclusive luxury accommodations in the heart of Sierra Nevada. A destination for those seeking the finest mountain experiences.
+                  <p className="text-white/60 leading-relaxed mb-6 text-lg">
+                    Pair Sierra Nevada&apos;s slopes with ski-in/ski-out stays, private guides, VIP lift access and Alpine dining. Add Mediterranean yacht days and a one-hour helicopter transfer for a seamless sea-to-summit escape.
                   </p>
+                  <ul className="mb-8 flex flex-wrap gap-2" aria-label="Sierra Nevada experience highlights">
+                    {['Ski-in / ski-out villas', 'Private chef & guides', 'VIP lift passes', '24/7 concierge'].map((highlight) => (
+                      <li key={highlight} className="rounded-full border border-[#c9a55a]/30 bg-[#c9a55a]/5 px-3 py-1.5 text-xs sm:text-sm text-white/70">
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
                   <Link
                     href="/sierra-nevada"
                     className="inline-block px-8 py-3 border-2 border-[#c9a55a] text-[#c9a55a] font-semibold rounded hover:bg-[#c9a55a] hover:text-black transition-all duration-300 uppercase tracking-wider text-sm"
