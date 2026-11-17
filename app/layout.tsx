@@ -10,9 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'DM Promotions | Ferrari Finali Mondiali 2026',
+  title: 'DM Promotions | Luxury Events, Yacht & Alpine Experiences',
   description:
-    'Experience the Ferrari Finali Mondiali 2026 in Barcelona with exclusive DM Promotions packages, including Casa Ferrari weekend tickets, full-weekend hospitality, hotel stays and vehicle transport.',
+    'Curated luxury events, Mediterranean yacht charters, private jet and helicopter travel, and bespoke Sierra Nevada alpine experiences by DM Promotions.',
   icons: {
     icon: [
       {

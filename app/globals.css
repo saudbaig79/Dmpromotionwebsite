@@ -122,9 +122,11 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
   body {
     @apply bg-[#0d0d0d] text-white antialiased;
+    overflow-x: clip;
   }
 }
 
